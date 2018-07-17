@@ -20,6 +20,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [LoginComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
