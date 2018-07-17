@@ -25,3 +25,6 @@ import { RegisterComponent } from './register/register.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+/*
+vglk;jlhkjghgfdxzcxdfgjhkjl;okp';iuyutfdrgfsfgfgyuhio;piuytdrsfdafdgftgyui
+ */
