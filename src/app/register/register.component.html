@@ -1,49 +1,43 @@
-<div class="col-md-6 col-md-offset-3">
-  <h2>Register</h2>
-  <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-          <label for="firstName">First Name</label>
-          <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
-          <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
-      </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-          <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
-          <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
-      </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
-        <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
-    </div>
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-      <label for="dob">Date of Birth</label>
-      <input type="text" class="form-control" name="dob" [(ngModel)]="model.dob" #dob="ngModel" required />
-      <div *ngIf="f.submitted && !dob.valid" class="help-block">Date of Birth is required</div>
+<form action="action_page.php">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="firstname"><b>First Name</b></label>
+    <input type="text" placeholder="First Name" name="firstname" required>
+
+    <label for="lastname"><b>Last Name</b></label>
+    <input type="text" placeholder="Last Name" name="lastname" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Email" name="email" required>
+
+    <label for="dob"><b>Date of Birth </b></label>
+    <input type="text" placeholder="Date of Birth" name="dob" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-repeat"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+    <h3>Please pick at least one music genre.</h3>
+    <br/>
+    <label for="genre1"><b>First Genre</b></label>
+    <input type="text" placeholder="Genre" name="genre1" required>
+
+    <label for="genre2"><b>Second Genre</b></label>
+    <input type="text" placeholder="Genre" name="genre2">
+
+    <label for="genre3"><b>Third Genre</b></label>
+    <input type="text" placeholder="Genre" name="genre3">
+    <hr>
+    <br/>
+    <button type="submit" class="registerbtn">Register</button>
   </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-      </div>
-      <h3>Please select up to three music genres.</h3>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-        <label for="genre1">Genre</label>
-        <input type="text" class="form-control" name="genre1" [(ngModel)]="model.genre1" #genre1="ngModel" required />
-        <div *ngIf="f.submitted && !genre1.valid" class="help-block">At least one genre is required</div>
-    </div>
-    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-      <label for="genre2">Genre</label>
-      <input type="text" class="form-control" name="genre2" [(ngModel)]="model.genre2" #genre2="ngModel" required />
+
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
-  <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-    <label for="genre3">Genre</label>
-    <input type="text" class="form-control" name="genre3" [(ngModel)]="model.genre3" #genre3="ngModel" required />
-</div>
-      <div class="form-group">
-          <button [disabled]="loading" class="btn btn-primary">Register</button>
-          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-          <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
-      </div>
-  </form>
-</div>
+</form>

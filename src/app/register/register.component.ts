@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +8,6 @@ import { Router } from '../../../node_modules/@angular/router';
 export class RegisterComponent implements OnInit {
 
   constructor() { }
-
 
   ngOnInit() {
   }
