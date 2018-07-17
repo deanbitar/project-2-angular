@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({

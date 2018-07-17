@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
+/* CSS Document */
+
 body {
     width:100px;
 	height:100px;
@@ -31,13 +33,4 @@ p {
 
 .logo {
 	color:#CCC;
-}
-
-.row {
-    display: flex;
-}
-
-.column {
-    flex: 33.33%;
-    padding: 5px;
 }
