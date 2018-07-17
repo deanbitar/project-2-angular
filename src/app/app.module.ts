@@ -17,6 +17,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [LoginComponent]
 })
 export class AppModule { }
