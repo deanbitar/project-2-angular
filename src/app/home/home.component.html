@@ -1,84 +1,111 @@
-
-
-<div class="page-wrapper chiller-theme toggled">
-    <nav id="sidebar" class="sidebar-wrapper">
-        <div class="sidebar-content">
-            <div id="toggle-sidebar">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="sidebar-brand">
-                <a href="#">Chordination</a>
-            </div>
-            <div class="sidebar-header">
-                <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/bootstrap4/assets/img/user.jpg" alt="User picture">
-                </div>
-                <div class="user-info">
-                    <span class="user-name">BOOOOL
-                        <strong></strong>
-                    </span>
-                    
-                </div>
-            </div>
-            <!-- sidebar-header  -->
-            
-            <!-- sidebar-search  -->
-            <div class="sidebar-menu">
-                <ul>
-                    
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                            <br>
-                            <span>Home</span>
-                        </a>
-                        
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                            <br>
-                            <span>Friends</span>
-                        </a>
-                        
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                            <br>
-                            <span>Profile</span>
-                        </a>
-                        
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                            <br>
-                            <span>Spotify</span>
-                        </a>
-                        
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                            <br>
-                            <span>Logout</span>
-                        </a>
-                        
-                    </li>
-                   
-                    
-                </ul>
-            </div>
-            
-        </div>
-        
-        
-    </nav>
-    
-    
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Collapsible sidebar using Bootstrap 4</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+<div id="chordination">
+<img src="https://image.ibb.co/cg2vyd/chordination.png" width="300px" position="fixed">
 </div>
+<br>
+<br>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+    <div class="row">
+      <div class="col-sm-2">
+        
+          <div class="container">
+              <div class="icon-bar">
+                  <a class="active" href="#"><i class="fa fa-home"></i></a> 
+                  <a href="#"><i class="fa fa-user-circle"></i></a> 
+                  <a href="#"><i class="fa fa-address-book"></i></a> 
+                  <a href="#"><i class="fa fa-spotify"></i></a>
+                  <a href="#"><i class="fa fa-close"></i></a> 
+                </div>
+          </div>
+        
+      </div>
+      <div class="col-sm-9">
+        <div class="scrollable-content content" >
+      <h4>
+        <small>RECENT POSTS</small>
+      </h4>
+      <hr>
+      <h2>I Love Food</h2>
+      <h5>
+        <span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+      <h5>
+        <span class="label label-danger">Food</span>
+        <span class="label label-primary">Ipsum</span>
+      </h5>
+      <br>
+      <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <br>
+      <br>
+      <h4>
+        <small>RECENT POSTS</small>
+      </h4>
+      <hr>
+      <h2>Officially Blogging</h2>
+      <h5>
+        <span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
+      <h5>
+        <span class="label label-success">Lorem</span>
+      </h5>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <hr>
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br>
+      <br>
+      <p>
+        <span class="badge">2</span> Comments:</p>
+      <br>
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          <img src="#" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-9">
+          <h4>Anja
+            <small>Sep 29, 2015, 9:12 PM</small>
+          </h4>
+          <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+        </div>
+        <div class="col-sm-2 text-center">
+          <img src="#" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-9">
+          <h4>John Row
+            <small>Sep 25, 2015, 8:25 PM</small>
+          </h4>
+          <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+          <p>
+            <br>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
