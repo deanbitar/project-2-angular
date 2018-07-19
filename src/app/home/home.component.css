@@ -5,8 +5,9 @@
 .scrollable-content {
       background-color: rgb(231, 239, 241);
       height: 100vh;
-      width: 900px;
-      overflow-y: scroll;
+      width: 1000px;
+      overflow-y: auto;
+      text-indent: 20px;
   }
 
   .icon-bar {
@@ -29,4 +30,36 @@
 
 .active {
     background-color: #4CAF50; /* Add an active/current color */
+}
+
+ .body{
+    /* background-color: #292F33; */
+
+    background-image: url(http://www.ownwallpaper.com/ownpic/b/110/1100721_android-material-design-wallpaper.jpg)
+}
+
+#chordination{
+    background-color: #82b74b;
+}
+
+.break{
+    background-color: #82b74b;
+} 
+
+.HeaderLogoWrapper {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    /* background-color: #82b74b; */
+    background-image: url(http://www.ownwallpaper.com/ownpic/b/110/1100721_android-material-design-wallpaper.jpg)
+}
+
+.profileIcon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+p {
+    font-size: 14px;
 }
