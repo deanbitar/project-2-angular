@@ -11,8 +11,9 @@
   }
 
   .icon-bar {
-    width: 90px; /* Set a specific width */
+    width: 140px; /* Set a specific width */
     background-color: #555; /* Dark-grey background */
+    position: absolute;
 }
 
 .icon-bar a {
@@ -46,13 +47,7 @@
     background-color: #82b74b;
 } 
 
-.HeaderLogoWrapper {
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-    /* background-color: #82b74b; */
-    background-image: url(http://www.ownwallpaper.com/ownpic/b/110/1100721_android-material-design-wallpaper.jpg)
-}
+
 
 .profileIcon {
     position: absolute;
@@ -62,4 +57,14 @@
 
 p {
     font-size: 14px;
+}
+
+.logo{
+    text-align:center;
+    position: relative;
+    left:50px;
+}
+
+i {
+    font-size: 20px;
 }
