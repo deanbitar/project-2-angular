@@ -1,20 +1,41 @@
+.body{
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/54/98/59579b64a38f43b.jpg);
+}
+
 .jumbotron {
   height: 100vh;
   overflow: auto;
 }
 .scrollable-content {
-      background-color: rgb(231, 239, 241);
+      background-color: #ffffff;
       height: 100vh;
-      width: 1000px;
+      width: 895px;
       overflow-y: auto;
       text-indent: 20px;
   }
 
   .icon-bar {
-    width: 200px; /* Set a specific width */
-    background-color: #555; /* Dark-grey background */
+    width: 178px; /* Set a specific width */
+    background-color: #010F0F; /* Dark-grey background */
+    border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 8px none #000000;
     
-    
+}
+
+img{
+    border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+
+}
+.profileIcon{
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border: 2px solid #000000;
 }
 
 .icon-bar a {
@@ -24,21 +45,21 @@
     transition: all 0.3s ease; /* Add transition for hover effects */
     color: white; /* White text color */
     font-size: 36px; /* Increased font-size */
+    border-radius: 15px 15px 15px 15px;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border: 8px none #000000;
+
 }
 
 .icon-bar a:hover {
-    background-color: #000; /* Add a hover color */
+    background-color: #1FD860 ; /* Add a hover color */
 }
 
 .active {
     background-color: #1FD860 /* Add an active/current color */
 }
 
- .body{
-    /* background-color: #292F33; */
-
-    background-image: url(http://www.ownwallpaper.com/ownpic/b/110/1100721_android-material-design-wallpaper.jpg)
-}
 
 #chordination{
     background-color: #82b74b;
@@ -52,8 +73,8 @@
 
 .profileIcon {
     position: absolute;
-    top: 0px;
-    right: 14px;
+    right: 17px;
+    top: 15px;
     
 }
 
