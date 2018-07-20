@@ -13,7 +13,23 @@
       overflow-y: auto;
       text-indent: 20px;
   }
+.profile{
+    color:white;
+    text-align: center;
+    position: relative;
+    right: 25px;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border: 8px none #000000;
+}
 
+.col-sm-1{
+    padding-right: 40;
+}
+.profile{
+    background-color: #000000;
+}
   .icon-bar {
     width: 178px; /* Set a specific width */
     background-color: #010F0F; /* Dark-grey background */
