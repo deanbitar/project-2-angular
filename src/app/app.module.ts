@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpModule } from '@angular/http';
+import { FeedComponent } from './feed/feed.component';
+import { FriendsComponent } from './friends/friends.component';
+import { SpotifyComponent } from './spotify/spotify.component';
+
 
 @NgModule({
   declarations: [
@@ -18,12 +22,15 @@ import { HttpModule } from '@angular/http';
     HomeComponent,
     ForgotPasswordComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    FeedComponent,
+    FriendsComponent,
+    SpotifyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
