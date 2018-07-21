@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
@@ -13,6 +14,9 @@ import { HttpModule } from '@angular/http';
 import { FeedComponent } from './feed/feed.component';
 import { FriendsComponent } from './friends/friends.component';
 import { SpotifyComponent } from './spotify/spotify.component';
+import { AuthService } from './shared/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -25,14 +29,16 @@ import { SpotifyComponent } from './spotify/spotify.component';
     ProfileComponent,
     FeedComponent,
     FriendsComponent,
-    SpotifyComponent
+    SpotifyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

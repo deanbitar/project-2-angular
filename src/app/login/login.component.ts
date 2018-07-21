@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../shared/http.service';
+import { Http } from '@angular/http';
+import { User } from '../shared/user';
+
+
 
 @Component({
   selector: 'app-login',
@@ -6,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  private email: String;
+  private password: String;
 
-  constructor() { }
+  constructor(private chordApi: HttpService) { }
 
+  public clickedLogin () {
+    this.chordApi.loginUser(this.email, this.password).subscribe(data => this.parseUser(data));
+  }
+
+  parseUser(inUser: string) {
+    if (inUser.length === 0) {
+    } else {
+      const user = inUser;
+      localStorage.setItem('user', user);
+      console.log(localStorage.getItem('user'));
+    }
+  }
   ngOnInit() {
   }
 
