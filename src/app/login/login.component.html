@@ -33,17 +33,17 @@
 
               <fieldset>
 
-                <input id="email" type="text" placeholder="Enter E-mail" class="form-control input-md">
+                <input id="email" type="text" [(ngModel)]="email" placeholder="Enter E-mail" class="form-control input-md"/>
                 <br>
-                <input id="password" type="password" placeholder="Enter Password" class="form-control input-md">
+                <input id="password" type="password" [(ngModel)]="password" placeholder="Enter Password" class="form-control input-md"/>
                 <div class="spacing">
                   <a routerLink='/forgot-password'>
                     Forgot Password?
                   </a>
                   <br/>
                 </div>
-                <button id="signIn" class="btn btn-lrg pull-right" style="font-size : 14px">Sign In</button>
-                <a href="http://localhost:4200/register" class="btn btn-lrg pull-left"style="font-size : 14px">REGISTER</a>
+                <button id="signIn" (click) = 'clickedLogin()' class="btn btn-lrg pull-right" style="font-size : 14px">Sign In</button>
+                <a routerLink= '/register' class="btn btn-lrg pull-left"style="font-size : 14px">REGISTER</a>
 
               </fieldset>
 
