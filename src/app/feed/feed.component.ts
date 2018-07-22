@@ -9,10 +9,9 @@ import { Post } from '../shared/post';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-
+  post: Post;
   private posts: Post [];
-
-  users: User[] = [];
+  // users: User[] = [];
 
   constructor(private http: HttpService) { }
 

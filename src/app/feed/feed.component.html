@@ -2,11 +2,11 @@
   <div class='container-fluid'>
     <h4>Recent Posts:</h4>
     <div class='row'>
-        <div *ngFor='let temp of users'>
-        <a [routerLink]="['/profile', temp.firstname]">{{temp.firstname}}</a>
-        <a [routerLink]="['/profile', temp.lastname]">{{temp.lastname}}</a>
-        <p>{{temp.postmeat}}</p>
-        <h6>{{temp.date}}</h6>
+        <div *ngFor='let post of posts'>
+        <a [routerLink]="['/profile', post.firstname]">{{post.firstname}}</a>
+        <a [routerLink]="['/profile', post.lastname]">{{post.lastname}}</a>
+        <p>{{post.postmeat}}</p>
+        <h6>{{post.date}}</h6>
       </div>
     </div>
   </div>
