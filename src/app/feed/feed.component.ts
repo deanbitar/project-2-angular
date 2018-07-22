@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/User';
 import { HttpService } from '../shared/http.service';
 import { Post } from '../shared/post';
 
@@ -8,9 +9,13 @@ import { Post } from '../shared/post';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+  post: Post;
   private posts: Post [];
+  // users: User[] = [];
 
   constructor(private http: HttpService) { }
+
+
 
   ngOnInit() {
     const user = localStorage.getItem('user');
@@ -21,5 +26,11 @@ export class FeedComponent implements OnInit {
   parsePosts(data) {
     this.posts = data;
     console.log(this.posts);
+    console.log(new Date(1532262399553));
   }
+
+  getDate(date: number) {
+    return new Date(date);
+  }
+
 }

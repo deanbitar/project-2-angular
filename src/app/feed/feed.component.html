@@ -1,13 +1,20 @@
 <div class='col-sm-6'>
-    <div class='container-fluid'>
-        <h4>Recent Posts:</h4>
-        <div class='row'>
-            <div *ngFor='let temp of users'>
-                <a [routerLink]="['/profile', temp.firstname]">{{temp.firstname}}</a>
-                <a [routerLink]="['/profile', temp.lastname]">{{temp.lastname}}</a>
-                <p>{{temp.postmeat}}</p>
-                <h6>{{temp.date}}</h6>
-            </div>
-        </div>
+  <div class='container-fluid'>
+    <div class=container>
+    <h4 id="heading">Recent Posts:</h4>
+
+  </div>
+  <br/>
+    <div class='row'>
+      <div class='container-fluid'>
+        <div *ngFor='let post of posts'>
+        <div class="name"><span>{{post.author.firstname}} {{post.author.lastname}}</span></div>
+        <p class="description">{{post.description}}</p>
+        <br/>
+        <div class="image"><span>{{post.picture}}</span></div>
+        <h6 class="date">{{getDate(post.submitTime)}}</h6>
+      </div>
+      </div>
     </div>
+  </div>
 </div>
