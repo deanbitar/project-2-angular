@@ -1,4 +1,3 @@
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Home</title>
@@ -11,7 +10,7 @@
   crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
   crossorigin="anonymous"></script>
-<div class="everything">
+<body class="body">
   <br/>
   <div class="heading">
     <div class="HeaderLogo">
@@ -19,12 +18,11 @@
     </div>
   </div>
   <div class="profileIcon">
-    <img src="https://image.ibb.co/jqsPDd/profile.jpg" width="90px">
+    <img src="http://www.borovskeho.cz/wp-content/uploads/2016/03/Silueta-2.jpg" width="140px">
   </div>
   <br/>
   <div class="row">
     <div class="col-sm-2">
-
       <div class="container">
         <div class="icon-bar">
           <a routerLink="feed">
@@ -44,23 +42,18 @@
           </a>
         </div>
       </div>
-
     </div>
     <div class="col-sm-9">
-
-      <router-outlet></router-outlet>
-
+     
+        <router-outlet></router-outlet>
+      
     </div>
     <div class="col-sm-1">
       <div class="profile">
         <div class="fluid-container">
           <br/>
-          <h5 id="firstname">{{firstname}}</h5>
-          <h5 id="lastname">{{lastname}}</h5>
+          <h5 id="firstname">{{firstname}} {{lastname}}</h5>
           <br/>
         </div>
       </div>
-
     </div>
-  </div>
-</div>
