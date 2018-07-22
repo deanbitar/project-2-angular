@@ -9,6 +9,7 @@ import { Post } from '../shared/post';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+
   private posts: Post [];
 
   users: User[] = [];
