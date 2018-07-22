@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/User';
 
 @Component({
   selector: 'app-feed',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
+  users: User[] = [];
+
   constructor() { }
+
+
 
   ngOnInit() {
   }
