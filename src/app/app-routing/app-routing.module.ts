@@ -9,6 +9,7 @@ import { ProfileComponent } from '../profile/profile.component';
 import { FeedComponent } from '../feed/feed.component';
 import { FriendsComponent } from '../friends/friends.component';
 import { SpotifyComponent } from '../spotify/spotify.component';
+import { CreatePostComponent } from '../create-post/create-post.component';
 
 
 
@@ -24,7 +25,9 @@ const routes: Routes = [
   { path: 'profile/:userId', component: ProfileComponent },
   { path: 'friends', component: FriendsComponent },
   { path: 'spotify', component: SpotifyComponent },
+  { path: 'create-post', component: CreatePostComponent },
   { path: '', redirectTo: '/home/feed', pathMatch: 'full' },
+
 
 ] },
 

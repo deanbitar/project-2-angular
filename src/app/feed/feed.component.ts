@@ -10,10 +10,10 @@ import { Post } from '../shared/post';
 })
 export class FeedComponent implements OnInit {
   post: Post;
-  private posts: Post [];
+  private posts: Post[];
   // users: User[] = [];
 
-  constructor(private http: HttpService) { 
+  constructor(private http: HttpService) {
 
   }
 
@@ -22,9 +22,8 @@ export class FeedComponent implements OnInit {
   ngOnInit() {
     const user = localStorage.getItem('user');
     const userJSON = JSON.parse(user);
-    this.http.getUserFeed(userJSON.userId).subscribe(data => {
-      this.parsePosts(data);
-      this.posts.sort((a, b) => new Date(b.submitTime).getTime() - new Date(a.submitTime).getTime()));
+    this.http.getUserFeed(userJSON.userId).subscribe(data => this.parsePosts(data));
+    this.posts.sort((a, b) => new Date(b.submitTime).getTime() - new Date(a.submitTime).getTime());
   }
 
   parsePosts(data) {
@@ -33,10 +32,13 @@ export class FeedComponent implements OnInit {
     console.log(new Date(1532262399553));
   }
 
-  getDate(date: number) {
-    return new Date(date);
+  getDate(inDate: number) {
+    const date = new Date(inDate);
+    return date;
+    /*     return date.getHours() + 1; */
+
   }
 
-  
+
 
 }

@@ -16,6 +16,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { SpotifyComponent } from './spotify/spotify.component';
 import { AuthService } from './shared/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 
 
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     FeedComponent,
     FriendsComponent,
     SpotifyComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
