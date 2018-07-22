@@ -13,14 +13,18 @@ export class FeedComponent implements OnInit {
   private posts: Post [];
   // users: User[] = [];
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService) { 
+
+  }
 
 
 
   ngOnInit() {
     const user = localStorage.getItem('user');
     const userJSON = JSON.parse(user);
-    this.http.getUserFeed(userJSON.userId).subscribe(data => this.parsePosts(data));
+    this.http.getUserFeed(userJSON.userId).subscribe(data => {
+      this.parsePosts(data);
+      this.posts.sort((a, b) => new Date(b.submitTime).getTime() - new Date(a.submitTime).getTime()));
   }
 
   parsePosts(data) {
@@ -32,5 +36,7 @@ export class FeedComponent implements OnInit {
   getDate(date: number) {
     return new Date(date);
   }
+
+  
 
 }
