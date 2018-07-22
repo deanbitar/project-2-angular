@@ -1,6 +1,11 @@
 .body{
     background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/54/98/59579b64a38f43b.jpg);
-    
+    height: 100vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    background-size: cover;
 }
 
 .everything{
