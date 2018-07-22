@@ -35,13 +35,13 @@
 
       <div class="container">
         <div class="icon-bar">
-          <a class="active" href="#">
+          <a routerLink="/home/feed">
             <i class="fa fa-home"> Home</i>
           </a>
-          <a routerLink="/profile">
+          <a routerLink="profile">
             <i class="fa fa-user-circle"> Profile </i>
           </a>
-          <a href="#">
+          <a href="friends">
             <i class="fa fa-group"> Friends</i>
           </a>
           <a href="#">
@@ -63,8 +63,8 @@
       <div class="profile">
         <div class="fluid-container">
           <br/>
-          <h5 id="firstname">First Name</h5>
-          <h5 id="lastname">Last Name</h5>
+          <h5 id="firstname">{{firstname}}</h5>
+          <h5 id="lastname">{{lastname}}</h5>
           <br/>
         </div>
       </div>

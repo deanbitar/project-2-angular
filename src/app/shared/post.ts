@@ -1,3 +1,3 @@
-export interface Post {id: number; description: string; picture: string; }
+export interface Post {id: number; description: string; picture: string; submitTime: number; }
 
 

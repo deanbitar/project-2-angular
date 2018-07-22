@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class HttpService {
-  private url = 'http://localhost:9005/ChordSpring/';
+  private url = 'http://ec2-13-58-73-166.us-east-2.compute.amazonaws.com:8080/Chordination/';
   constructor(private http: HttpClient) {
   }
 
@@ -42,9 +42,6 @@ export class HttpService {
 
   public searchUsers(name: string): Observable<string> {
     console.log('searching for ' + name);
-    // const body = new HttpParams();
-    // body.set('email', inEmail);
-    // body.set('password', inPassword);
     const path = this.url.concat('searchUserByName.chord');
     const params = { name: name };
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
