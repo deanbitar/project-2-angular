@@ -11,8 +11,8 @@ import { User } from '../shared/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private email: String;
-  private password: String;
+  private email: string;
+  private password: string;
 
   constructor(private chordApi: HttpService) { }
 
@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
   }
 
   parseUser(inUser: string) {
-    if (inUser.length === 0) {
+    console.log(inUser);
+    if (inUser == null) {
     } else {
       const user = inUser;
       localStorage.setItem('user', user);

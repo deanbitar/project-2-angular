@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from './user';
 const httpOptions = {
-   headers: new HttpHeaders({ 'Content-Type': 'application/json',
+   headers: new HttpHeaders({ 'Content-Type': 'x-www-form-urlencoded'
    })
 };
 
@@ -13,12 +13,15 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class HttpService {
-  private url = 'http://ec2-13-58-73-166.us-east-2.compute.amazonaws.com:8080/Chordination/';
+  private url = 'http://localhost:9005/ChordSpring/';
   constructor(private http: HttpClient) {
   }
 
-  public loginUser(inEmail: String, inPassword: String): Observable<string> {
+  public loginUser(inEmail: string, inPassword: string): Observable<string> {
+    // const body = new HttpParams();
+    // body.set('email', inEmail);
+    // body.set('password', inPassword);
     const path = this.url.concat('login.chord');
-    return this.http.post(path, {email: inEmail, password: inPassword  }).pipe(map(resp => resp as string));
+    return this.http.post(path, {email: inEmail, password: inPassword}, httpOptions).pipe(map(resp => resp as string));
   }
 }
