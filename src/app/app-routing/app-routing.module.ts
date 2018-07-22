@@ -21,7 +21,7 @@ const routes: Routes = [
 
   children:
   [{ path: 'feed', component: FeedComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:userId', component: ProfileComponent },
   { path: 'friends', component: FriendsComponent },
   { path: 'spotify', component: SpotifyComponent },
   { path: '', redirectTo: '/home/feed', pathMatch: 'full' },

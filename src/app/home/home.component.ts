@@ -7,15 +7,13 @@ import { User } from '../shared/user';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private firstname;
-  private lastname;
+  private user: User;
 
   constructor() { }
 
   ngOnInit() {
-    const user: User = JSON.parse(localStorage.getItem('user'));
-    this.firstname = user.firstname;
-    this.lastname = user.lastname;
+     this.user = JSON.parse(localStorage.getItem('user'));
+
   }
 
 }
