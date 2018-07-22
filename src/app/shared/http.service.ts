@@ -42,9 +42,6 @@ export class HttpService {
 
   public searchUsers(name: string): Observable<string> {
     console.log('searching for ' + name);
-    // const body = new HttpParams();
-    // body.set('email', inEmail);
-    // body.set('password', inPassword);
     const path = this.url.concat('searchUserByName.chord');
     const params = { name: name };
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));

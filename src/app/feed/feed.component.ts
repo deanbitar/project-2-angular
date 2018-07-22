@@ -24,7 +24,6 @@ export class FeedComponent implements OnInit {
   }
 
   parsePosts(data) {
-    // const postsJSON = data;
     this.posts = data;
     console.log(this.posts);
   }
