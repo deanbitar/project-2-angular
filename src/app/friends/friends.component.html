@@ -1,3 +1,20 @@
-<p>
-  friends works!
-</p>
+<h2>Search for Friends</h2>
+<div>
+  <label>Name:
+    <input #searchBox />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="search(searchBox.value);">
+    Search
+  </button>
+</div>
+<ul class="users">
+  <li *ngFor="let user of users">
+    <h2>User Details</h2>
+    <div><span>Id: </span>{{user.userid}}</div>
+    <div><span>First Name: </span>{{user.firstname}}</div>
+    <div><span>Last Name: </span>{{user.lastname}}</div>
+    <div><span>Email: </span>{{user.email}}</div>
+    <div><span>Date of Birth: </span>{{user.dob}}</div>
+  </li>
+</ul>

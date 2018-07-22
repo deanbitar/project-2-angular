@@ -12,52 +12,52 @@
         <label for="firstname">
           <b>First Name</b>
         </label>
-        <input type="text" placeholder="First Name" name="firstname" required>
+        <input type="text" class="firstname" placeholder="First Name" name="firstname" [(ngModel)]="firstname" required>
 
         <label for="lastname">
           <b>Last Name</b>
         </label>
-        <input type="text" placeholder="Last Name" name="lastname" required>
+        <input type="text" class="lastname" placeholder="Last Name" name="lastname" [(ngModel)]="lastname" required>
 
         <label for="email">
           <b>Email</b>
         </label>
-        <input type="text" placeholder="Email" name="email" required>
+        <input type="text" class="email" placeholder="Email" name="email" [(ngModel)]="email" required>
 
         <label for="dob">
           <b>Date of Birth </b>
         </label>
-        <input type="text" placeholder="Date of Birth" name="dob" required>
+        <input type="text" class="dob" placeholder="Date of Birth" name="dob" [(ngModel)]="dob" required>
 
         <label for="psw">
           <b>Password</b>
         </label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" class="pswd" placeholder="Enter Password" name="psw" [(ngModel)]="password" required>
 
         <label for="psw-repeat">
           <b>Confirm Password</b>
         </label>
-        <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+        <input type="password" class="confirm" placeholder="Confirm Password" name="psw-repeat" [(ngModel)]="confirm" required>
 
         <h3>Please pick at least one music genre.</h3>
         <br/>
         <label for="genre1">
           <b>First Genre</b>
         </label>
-        <input type="text" placeholder="Genre" name="genre1" required>
+        <input type="text" class="genre1" placeholder="Genre" name="genre1" [(ngModel)]="genreOne" required>
 
         <label for="genre2">
           <b>Second Genre</b>
         </label>
-        <input type="text" placeholder="Genre" name="genre2">
+        <input type="text" class="genre2" placeholder="Genre" name="genre2" [(ngModel)]="genreTwo">
 
         <label for="genre3">
           <b>Third Genre</b>
         </label>
-        <input type="text" placeholder="Genre" name="genre3">
-        <button type="submit" class="registerbtn">Register</button>
+        <input type="text" class="genre3" placeholder="Genre" name="genre3" [(ngModel)]="genreThree">
+        <button type="submit" class="registerbtn" (click) = 'clickedRegister()'>Register</button>
         <p>Already have an account?
-            <a href="#">Sign in</a></p>
+            <a routerLink='/login'>Sign in</a></p>
       </div>
     </div>
   </div>
