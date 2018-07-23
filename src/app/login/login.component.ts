@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../shared/http.service';
-import { Http } from '@angular/http';
 import { User } from '../shared/user';
 import { Router } from '@angular/router';
 
