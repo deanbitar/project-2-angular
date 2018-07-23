@@ -17,6 +17,7 @@ import { SpotifyComponent } from './spotify/spotify.component';
 import { AuthService } from './shared/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { AuthGaurdService } from './shared/auth-gaurd.service';
 
 
 
@@ -40,7 +41,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, HttpClientModule],
+  providers: [AuthService, HttpClientModule, AuthGaurdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

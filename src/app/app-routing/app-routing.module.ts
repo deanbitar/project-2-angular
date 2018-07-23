@@ -10,6 +10,7 @@ import { FeedComponent } from '../feed/feed.component';
 import { FriendsComponent } from '../friends/friends.component';
 import { SpotifyComponent } from '../spotify/spotify.component';
 import { CreatePostComponent } from '../create-post/create-post.component';
+import { AuthGaurdService } from '../shared/auth-gaurd.service';
 
 
 
@@ -18,14 +19,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   {path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent,
+  { path: 'home', component: HomeComponent, canActivate: [AuthGaurdService],
 
   children:
-  [{ path: 'feed', component: FeedComponent },
-  { path: 'profile/:userId', component: ProfileComponent },
-  { path: 'friends', component: FriendsComponent },
-  { path: 'spotify', component: SpotifyComponent },
-  { path: 'create-post', component: CreatePostComponent },
+  [{ path: 'feed', component: FeedComponent, canActivate: [AuthGaurdService] },
+  { path: 'profile/:userId', component: ProfileComponent, canActivate: [AuthGaurdService] },
+  { path: 'friends', component: FriendsComponent, canActivate: [AuthGaurdService] },
+  { path: 'spotify', component: SpotifyComponent, canActivate: [AuthGaurdService] },
+  { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGaurdService] },
   { path: '', redirectTo: '/home/feed', pathMatch: 'full' },
 
 
