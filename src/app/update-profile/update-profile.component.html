@@ -1,5 +1,4 @@
 <div class="container">
-  <div *ngIf="user">
     <div class="container">
       <img id="image" src="https://image.ibb.co/jqsPDd/profile.jpg" />
 
@@ -17,7 +16,7 @@
 
         <div class="col col-sm-6">
           <h3>Bio:</h3>
-          <input id="bio" type="text" [(ngModel)]="user.bio" placeholder="Enter bio" class="form-control input-md"/>
+          <textarea id="bio" type="text" [(ngModel)]="user.bio" placeholder="Enter bio" class="form-control input-md" rows="3"></textarea>
 
           <h3>Favorite Genres:</h3>
           <input id="genreOne" type="text" [(ngModel)]="user.genreOne" placeholder="Enter genreOne" class="form-control input-md"/>
@@ -25,9 +24,8 @@
           <input id="genreThree" type="text" [(ngModel)]="user.genreThree" placeholder="Enter genreThree" class="form-control input-md"/>
 
         </div>
-        <button [routerLink]="['profile', user.userId]">Cancel</button>
+        <button [routerLink]="['/home/profile', user.userId]">Cancel</button>
         <button id="saveUser" (click) = 'saveUser()' class="btn btn-lrg pull-right" style="font-size : 14px">Save</button>
       </div>
-    </div>
   </div>
 </div>

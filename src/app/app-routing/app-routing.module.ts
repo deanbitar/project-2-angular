@@ -11,6 +11,7 @@ import { FriendsComponent } from '../friends/friends.component';
 import { SpotifyComponent } from '../spotify/spotify.component';
 import { CreatePostComponent } from '../create-post/create-post.component';
 import { AuthGaurdService } from '../shared/auth-gaurd.service';
+import { UpdateProfileComponent } from '../update-profile/update-profile.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   children:
   [{ path: 'feed', component: FeedComponent, canActivate: [AuthGaurdService] },
   { path: 'profile/:userId', component: ProfileComponent, canActivate: [AuthGaurdService] },
+  { path: 'update-profile/:userId', component: UpdateProfileComponent, canActivate: [AuthGaurdService] },
   { path: 'friends', component: FriendsComponent, canActivate: [AuthGaurdService] },
   { path: 'spotify', component: SpotifyComponent, canActivate: [AuthGaurdService] },
   { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGaurdService] },

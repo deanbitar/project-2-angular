@@ -28,9 +28,11 @@ export class UpdateProfileComponent implements OnInit {
     };
 
     sessionStorage.setItem('user', JSON.stringify(this.user));
+    this.user = JSON.parse(sessionStorage.getItem('user'));
     console.log(sessionStorage.getItem('user'));
-    this.router.navigate(['/home']);
+    this.router.navigate(['home/profile', this.user.userId]);
   }
   ngOnInit() {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 }
