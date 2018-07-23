@@ -7,7 +7,6 @@
     overflow-x: hidden; 
     background-size: cover;
 }
-
 .row{
     width: 900px;
     border-radius: 15px 15px 15px 15px;
@@ -15,6 +14,9 @@
     -webkit-border-radius: 15px 15px 15px 15px;
     border: 4px solid #010F0F;
     background-color: #E6E9D6;
+    position: relative;
+    top: 50px;
+    left: 120px;
 }
 
 .jumbotron {
