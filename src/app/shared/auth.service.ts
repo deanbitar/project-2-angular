@@ -14,13 +14,11 @@ export class AuthService {
   public isAuthenticated(): boolean {
 
     const user: string = sessionStorage.getItem('user');
-    console.log(user);
-    console.log(isNull(user));
+
     if (isNull(user)) {
       return false;
     } else {
       const userJSON: User = JSON.parse(user);
-      console.log(userJSON);
       if (userJSON.userId > 0) {
         return true;
       } else {
