@@ -5,7 +5,7 @@
     -moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius: 15px 15px 15px 15px;
     border: 4px solid #010F0F;
-    background-color: #ffffff;
+    background-color: #E6E9D6;
 }
 #heading{
     font-size: 28px;
@@ -21,7 +21,27 @@
     right: 25px;
     
 }
+<<<<<<< HEAD
 /* .container{
+=======
+
+.button{
+    position: relative;
+    right: 90px;
+    top: -10px;
+}
+.btn{
+    background-color: #010F0F;
+    color:white;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border: 4px none #010F0F;
+    font-size: 20px;
+}
+
+.container{
+>>>>>>> 15f066d1d33be6c96f62aadeb751897b7f6f213e
     background-color: #010F0F;
     border-radius: 15px 15px 15px 15px;
     -moz-border-radius: 15px 15px 15px 15px;
