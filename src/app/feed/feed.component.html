@@ -10,7 +10,7 @@
             <div class='container-fluid'>
                 <div *ngFor='let post of posts'>
                     <div class="name">
-                        <span><a [routerLink]="['/profile', post.author.userId]">{{post.author.firstname}} {{post.author.lastname}}</a></span>
+                        <span><a [routerLink]="['/home/profile', post.author.userId]">{{post.author.firstname}} {{post.author.lastname}}</a></span>
                     </div>
                     <p class="description">{{post.description}}</p>
                     <br/>
