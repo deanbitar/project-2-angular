@@ -18,6 +18,7 @@ import { AuthService } from './shared/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { AuthGaurdService } from './shared/auth-gaurd.service';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 
@@ -33,6 +34,7 @@ import { AuthGaurdService } from './shared/auth-gaurd.service';
     FriendsComponent,
     SpotifyComponent,
     CreatePostComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     BrowserModule,
