@@ -1,41 +1,50 @@
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-      crossorigin="anonymous">
-  </head>
-  
-  <body background="https://images5.alphacoders.com/342/thumb-1920-342360.jpg">
-      <div class="row">
-    <div class="col-sm-3">
-        <div class="container">
-          <div class="jumbotron">
-              <h4>Home</h4>
-              <h4>Friends</h4>
-              <h4>Profile</h4>
-              <h4>Log Out</h4>
+<div class="container">
+  <div *ngIf="user">
+    <div class="container">
+      <img id="image" src="https://image.ibb.co/jqsPDd/profile.jpg" />
+
+      <h1>{{ user.firstname }} {{ user.lastname }}</h1>
+
+    </div>
+
+    <div class="container">
+      <div class="col col-sm-6">
+        <h3>Email: {{ user.email }}</h3>
+        <h3>Date of Birth: {{ user.dob }}</h3>
+      </div>
+
+      <div class="col col-sm-6">
+        <h3>Bio:</h3>
+        <p>{{ user.bio }}</p>
+        <h3>Favorite Genres:</h3>
+        <h6> {{ user.genreOne }}</h6>
+        <h6> {{ user.genreTwo }}</h6>
+        <h6> {{ user.genreThree }}</h6>
+      </div>
+    </div>
+
+    <div class='col-sm-6'>
+      <div class='container-fluid'>
+        <div class=container>
+          <h4 id="heading">Recent Posts:</h4>
+        </div>
+        <br/>
+        <div class='row'>
+          <div class='container-fluid'>
+            <div *ngFor='let post of posts'>
+              <div class="name">
+                <span>{{post.author.firstname}} {{post.author.lastname}}</span>
+              </div>
+              <p class="description">{{post.description}}</p>
+              <br/>
+              <div class="image">
+                <span>{{post.picture}}</span>
+              </div>
+              <h6 class="date">{{getDate(post.submitTime)}}</h6>
+            </div>
           </div>
         </div>
       </div>
-  
-  
-    <div class="col-sm-6">
-      <div class="container">
-        <div class="jumbotron">
-          <h4>Profile Details</h4>
-        </div>
-      </div>
     </div>
-    <div class="col-sm-3">
-      <div class="container">
-        <div class="jumbotron">
-          <h3>First Name, Last Name</h3>
-          <img src="https://www.spiritgamer.fr/wp-content/uploads/2018/04/detroit-become-human-connor-1024x576.jpg">
-        </div>
-      </div>
-    </div>
-  
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-      crossorigin="anonymous"></script>
+  </div>
+</div>

@@ -28,7 +28,7 @@
           <a routerLink="feed">
             <i class="fa fa-home"> Home</i>
           </a>
-          <a routerLink="profile">
+          <a [routerLink]="['profile', user.userId]">
             <i class="fa fa-user-circle"> Profile </i>
           </a>
           <a routerLink="friends">
@@ -52,7 +52,8 @@
       <div class="profile">
         <div class="fluid-container">
           <br/>
-          <h5 id="firstname">{{firstname}} {{lastname}}</h5>
+          <h5 id="firstname">{{user.firstname}}</h5>
+          <h5 id="lastname">{{user.lastname}}</h5>
           <br/>
         </div>
       </div>

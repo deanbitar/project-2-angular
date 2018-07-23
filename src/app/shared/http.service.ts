@@ -46,4 +46,10 @@ export class HttpService {
     const params = { name: name };
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
   }
+
+  public getUserById(userId) {
+    const path = this.url.concat('getUser.chord');
+    const params = { userId: userId};
+    return this.http.get(path, {params: params}).pipe(map(resp => resp as string));
+  }
 }
