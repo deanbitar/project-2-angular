@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
         email: userJSON.email, dob: userJSON.dob, password: userJSON.password, genreOne: userJSON.genreOne,
         genreTwo: userJSON.genreTwo, genreThree: userJSON.genreThree, picture: userJSON.picture,
         bio: userJSON.bio};
-      localStorage.setItem('user', JSON.stringify(user));
-      console.log(localStorage.getItem('user'));
+      sessionStorage.setItem('user', JSON.stringify(user));
+      console.log(sessionStorage.getItem('user'));
       this.router.navigate(['/home']);
     }
   }

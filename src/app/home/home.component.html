@@ -37,7 +37,7 @@
           <a href="#">
             <i class="fa fa-spotify"> Spotify</i>
           </a>
-          <a href="#">
+          <a (click)="clickedLogout()">
             <i class="fa fa-close"> Logout</i>
           </a>
         </div>
@@ -52,8 +52,7 @@
       <div class="profile">
         <div class="fluid-container">
           <br/>
-          <h5 id="firstname">{{user.firstname}}</h5>
-          <h5 id="lastname">{{user.lastname}}</h5>
+          <h5 id="firstname">{{user.firstname}} {{user.lastname}}</h5>
           <br/>
         </div>
       </div>
