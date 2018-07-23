@@ -2,17 +2,15 @@
     <div class='container-fluid'>
         <div class=container>
             <h4 id="heading">Recent Posts:</h4>
-
         </div>
-        <div class="btn btn-primary" routerLink="/home/create-post">Create new post
-
+        <div class="button">
+            <button class="btn" routerLink="/home/create-post">+ Create new post</button>
         </div>
-        <br/>
         <div class='row'>
             <div class='container-fluid'>
                 <div *ngFor='let post of posts'>
                     <div class="name">
-                        <span>{{post.author.firstname}} {{post.author.lastname}}</span>
+                        <span><a [routerLink]="['/profile', post.author.userId]">{{post.author.firstname}} {{post.author.lastname}}</a></span>
                     </div>
                     <p class="description">{{post.description}}</p>
                     <br/>
@@ -24,5 +22,4 @@
             </div>
         </div>
     </div>
-
 </div>
