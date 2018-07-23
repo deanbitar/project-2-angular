@@ -14,11 +14,12 @@ export class ProfileComponent implements OnInit {
   user: User;
   posts: Post[];
 
-  constructor(private route: ActivatedRoute, private httpService: HttpService) { }
+  constructor(private route: ActivatedRoute, private httpService: HttpService) {
+    this.route.params.subscribe(params => this.changeDisplayedProfile(params));
+  }
 
   ngOnInit() {
     const userId = Number(this.route.snapshot.paramMap.get('userId'));
-
     this.httpService.getUserById(userId)
       .subscribe(user => this.parseUser(user));
     this.httpService.getUserPosts(userId).subscribe(data => this.parsePosts(data));
@@ -38,5 +39,9 @@ export class ProfileComponent implements OnInit {
     return date;
     /*     return date.getHours() + 1; */
 
+  }
+
+  changeDisplayedProfile(params) {
+    this.ngOnInit();
   }
 }

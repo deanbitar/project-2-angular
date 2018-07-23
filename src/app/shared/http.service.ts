@@ -52,4 +52,13 @@ export class HttpService {
     const params = { userId: userId};
     return this.http.get(path, {params: params}).pipe(map(resp => resp as string));
   }
+
+  public updateUser(user) {
+    const path = this.url.concat('updateUser.chord');
+    const params = {
+      userId: user.userId, email: user.email, dob: user.dob, bio: user.bio,
+      genreOne: user.genreOne, genreTwo: user.genreTwo, genreThree: user.genreThree
+    };
+    return this.http.get(path, {params: params}).pipe(map(resp => resp as string));
+  }
 }
