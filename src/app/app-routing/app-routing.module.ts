@@ -25,7 +25,7 @@ const routes: Routes = [
   children:
   [{ path: 'feed', component: FeedComponent, canActivate: [AuthGaurdService] },
   { path: 'profile/:userId', component: ProfileComponent, canActivate: [AuthGaurdService] },
-  { path: 'update-profile/:userId', component: UpdateProfileComponent, canActivate: [AuthGaurdService] },
+  { path: 'update-profile', component: UpdateProfileComponent, canActivate: [AuthGaurdService] },
   { path: 'friends', component: FriendsComponent, canActivate: [AuthGaurdService] },
   { path: 'spotify', component: SpotifyComponent, canActivate: [AuthGaurdService] },
   { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGaurdService] },
