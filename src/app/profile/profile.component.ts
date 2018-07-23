@@ -21,8 +21,7 @@ export class ProfileComponent implements OnInit {
 
     this.httpService.getUserById(userId)
       .subscribe(user => this.parseUser(user));
-    this.httpService.getUserFeed(userId).subscribe(data => this.parsePosts(data));
-    this.posts.sort((a, b) => new Date(b.submitTime).getTime() - new Date(a.submitTime).getTime());
+    this.httpService.getUserPosts(userId).subscribe(data => this.parsePosts(data));
   }
 
   parseUser(user) {
@@ -31,6 +30,7 @@ export class ProfileComponent implements OnInit {
 
   parsePosts(data) {
     this.posts = data;
+    this.posts.sort((a, b) => new Date(b.submitTime).getTime() - new Date(a.submitTime).getTime());
   }
 
   getDate(inDate: number) {
