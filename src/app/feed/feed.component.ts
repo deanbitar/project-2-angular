@@ -23,11 +23,11 @@ export class FeedComponent implements OnInit {
     const user = localStorage.getItem('user');
     const userJSON = JSON.parse(user);
     this.http.getUserFeed(userJSON.userId).subscribe(data => this.parsePosts(data));
-    this.posts.sort((a, b) => new Date(b.submitTime).getTime() - new Date(a.submitTime).getTime());
   }
 
   parsePosts(data) {
     this.posts = data;
+    this.posts.sort((a, b) => new Date(b.submitTime).getTime() - new Date(a.submitTime).getTime());
     console.log(this.posts);
     console.log(new Date(1532262399553));
   }
