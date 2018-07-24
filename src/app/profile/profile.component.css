@@ -8,15 +8,90 @@
     background-size: cover;
 }
 .row{
-    width: 900px;
-    border-radius: 15px 15px 15px 15px;
-    -moz-border-radius: 15px 15px 15px 15px;
-    -webkit-border-radius: 15px 15px 15px 15px;
+    overflow-y: scroll;
+    text-align:center;
+    width: 1050px;
+    height: 500px;
     border: 4px solid #010F0F;
     background-color: #E6E9D6;
     position: relative;
-    top: 20px;
-    left: 30px;
+    left:-15px;
+}
+
+.userbio{
+    position: absolute;
+    text-align:left;
+    font-size: 14px;
+    top: 372px;
+    left: 70px;
+}
+
+#posts{
+    position:relative;
+    text-align: left;
+    top: 110px;
+    font-size: 18px;
+    color: black;
+    left: 55px;
+}
+#heading{
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    top: 100px;
+    left: 68px;
+}
+h1{
+    position: relative;
+    left: 375px;
+    top: 5px;
+}
+
+#useremail{
+    position: relative;
+    left: 40px;
+    top: 0px;
+}
+#userdob{
+    position: relative;
+    left: 42px;
+    top: 10px;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #010F0F;
+    width: 995px;
+    padding: 0;
+    position:relative;
+    top:100px;
+}
+
+.genre{
+    position: relative;
+    top: 300px;
+    right:-560px;
+    font-size: 16px;
+    color:black;
+}
+
+h6{
+    font-size:22px;
+    text-align: center;
+    font-weight: bold;
+    color: #1FD860;
+}
+
+.btn{
+    font-size: 18px;
+    color: black;
+    background-color: #1FD860;
+    position: relative;
+    top: 5px;
+    right:-540px;
+
 }
 
 .jumbotron {
@@ -43,10 +118,18 @@
 border: 8px none #000000;
     
 }
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
 img{
     border-radius: 15px 15px 15px 15px;
 -moz-border-radius: 15px 15px 15px 15px;
 -webkit-border-radius: 15px 15px 15px 15px;
+border: 2px solid #010F0F;
+position: relative;
+left: 375px;
 }
 .profileIcon{
     background-color: white;
@@ -79,14 +162,7 @@ border: 8px none #000000;
 .break{
     background-color: #82b74b;
 } 
-#image {
-    position: relative;
-    left: 17px;
-    top: 15px;
-    width: 90px;
-    height:90px;
-    
-}
+
 p {
     font-size: 14px;
 }

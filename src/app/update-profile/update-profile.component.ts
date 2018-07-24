@@ -9,11 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./update-profile.component.css']
 })
 export class UpdateProfileComponent implements OnInit {
+
   user: User;
+  newPicture: File;
 
   constructor(private chordApi: HttpService, private router: Router) { }
 
   public saveUser() {
+    this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
     this.chordApi.updateUser(this.user).subscribe(data => this.parseUser(data));
   }
 
@@ -34,5 +37,25 @@ export class UpdateProfileComponent implements OnInit {
   }
   ngOnInit() {
     this.user = JSON.parse(sessionStorage.getItem('user'));
+  }
+
+  selectedPicture(event) {
+    this.newPicture = event.target.files[0];
+    console.log(this.newPicture);
+    this.chordApi.updateUserPicture(this.newPicture, this.handlePicChng);
+  }
+
+  private handlePicChng(err, data) {
+    if (err) {
+      console.log('There was an error uploading the picture: ', err);
+    } else {
+      console.log(data);
+
+      const user: User = JSON.parse(sessionStorage.getItem('user'));
+      user.picture = data.Location;
+
+      sessionStorage.setItem('user', JSON.stringify(user));
+      alert('File uploaded!');
+    }
   }
 }
