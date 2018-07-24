@@ -9,8 +9,10 @@ import { Post } from '../shared/post';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+  user: User;
   post: Post;
   private posts: Post[];
+  isActive: boolean;
   // users: User[] = [];
 
   constructor(private http: HttpService) {
@@ -20,9 +22,12 @@ export class FeedComponent implements OnInit {
 
 
   ngOnInit() {
-    const user = sessionStorage.getItem('user');
-    const userJSON = JSON.parse(user);
-    this.http.getUserFeed(userJSON.userId).subscribe(data => this.parsePosts(data));
+    this.post = {
+      author: null, description: null, picture: null, submitTime: null, id: null
+    };
+    const userJSON = sessionStorage.getItem('user');
+    this.user = JSON.parse(userJSON);
+    this.http.getUserFeed(this.user.userId).subscribe(data => this.parsePosts(data));
   }
 
   parsePosts(data) {
@@ -39,6 +44,28 @@ export class FeedComponent implements OnInit {
 
   }
 
+  savePost() {
+
+    this.post = {
+      author: this.user, description: this.post.description, picture: this.post.picture, submitTime: null, id: null
+    };
+
+    this.http.createPost(this.post.author.userId, this.post.description, this.post.picture).subscribe(data => this.parsePost(data));
+  }
+
+  parsePost(postJSON) {
+    this.post = {
+      author: this.user, description: postJSON.description, picture: postJSON.picture, submitTime: null, id: null
+    };
+  }
+
+  createPost() {
+    this.isActive = true;
+  }
+
+  cancelPost() {
+    this.isActive = false;
+  }
 
 
 }
