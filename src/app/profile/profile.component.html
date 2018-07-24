@@ -28,6 +28,9 @@
         <h6> {{ user.genreThree }}</h6>
       </div>
     </div>
+    <div *ngIf="isMyProfile">
+        <button routerLink="/home/update-profile">Edit Profile</button>
+    </div>
     <div class="w-100"></div>
     <br/><br/>
     <div class="col-md-auto">
