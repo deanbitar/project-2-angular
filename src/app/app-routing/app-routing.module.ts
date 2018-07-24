@@ -11,7 +11,7 @@ import { FriendsComponent } from '../friends/friends.component';
 import { SpotifyComponent } from '../spotify/spotify.component';
 import { CreatePostComponent } from '../create-post/create-post.component';
 import { AuthGaurdService } from '../shared/auth-gaurd.service';
-
+import { SpotifyServiceService} from '../shared/spotify-service.service';
 
 
 const routes: Routes = [
