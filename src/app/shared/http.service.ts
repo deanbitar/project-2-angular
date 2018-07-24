@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class HttpService {
-  private url = 'http://ec2-13-58-73-166.us-east-2.compute.amazonaws.com:8080/Chordination/';
+  private url = 'http://localhost:9003/ChordSpring/';
   constructor(private http: HttpClient) {
   }
 
@@ -32,6 +32,11 @@ export class HttpService {
     const path = this.url.concat('getUserPosts.chord');
     const params = {userId: userId};
     return this.http.get(path, {params: params});
+  }
+
+  public createPost(authorId, message, picture) {
+    const params = {userId: authorId, message: message, picture: picture};
+    return this.http.get(this.url.concat('createPost.chord'), {params: params});
   }
 
   public getUserFeed(userId) {
