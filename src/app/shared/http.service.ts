@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from './user';
-import * as AWS from 'aws-sdk/global';
-import * as S3 from 'aws-sdk/clients/s3';
+// import * as AWS from 'aws-sdk/global';
+// import * as S3 from 'aws-sdk/clients/s3';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,17 +19,17 @@ const httpOptions = {
 export class HttpService {
 
   // private url = 'http://ec2-13-58-73-166.us-east-2.compute.amazonaws.com:8080/Chordination/';
-  private url = 'http://localhost:9005/ChordSpring/';
+  private url = 'http://localhost:9003/ChordSpring/';
   private s3PictureFolder = 'photos/';
   private bucketUrl = 'https://console.aws.amazon.com/s3/buckets/chordination/';
 
-  private bucket = new S3(
-    {
-      accessKeyId: 'AKIAJ3JKMRKOWD6FHJPQ',
-      secretAccessKey: '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',
-      region: 'us-east-1'
-    }
-  );
+//  private bucket = new S3(
+//    {
+//      accessKeyId: 'AKIAJ3JKMRKOWD6FHJPQ',
+//      secretAccessKey: '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',
+//      region: 'us-east-1'
+//    }
+//  );
 
   constructor(private http: HttpClient) { }
 
@@ -85,14 +85,14 @@ export class HttpService {
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
   }
 
-  public updateUserPicture(picture: File, callback?: (err, data) => void) {
+//  public updateUserPicture(picture: File, callback?: (err, data) => void) {
 
-    const params = {
-      Bucket: 'chordination',
-      Key: this.s3PictureFolder + picture.name,
-      Body: picture
-    };
+//    const params = {
+//      Bucket: 'chordination',
+//      Key: this.s3PictureFolder + picture.name,
+//      Body: picture
+//    };
 
-    this.bucket.upload(params, callback);
-  }
+//    this.bucket.upload(params, callback);
+//  }
 }
