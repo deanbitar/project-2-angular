@@ -10,7 +10,7 @@
                     <textarea id="description" type="text" [(ngModel)]="post.description" placeholder="Enter Description" class="form-control input-md"
                         rows="3"></textarea>
                     <button id="cancelPost" (click)="cancelPost()" class="btn btn-lrg pull-right" style="font-size : 14px">Cancel</button>
-                    <button id="savePost" (click)='savePost()' class="btn btn-lrg pull-right" style="font-size : 14px">Save</button>
+                    <a href = "http://localhost:4200/home/feed"><button id="savePost" (click)='savePost()' class="btn btn-lrg pull-right" style="font-size : 14px">Save</button></a>
                 </div>
                 <div *ngFor='let post of posts'>
                     <div class="name">

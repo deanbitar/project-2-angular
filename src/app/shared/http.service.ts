@@ -19,7 +19,7 @@ const httpOptions = {
 export class HttpService {
 
   // private url = 'http://ec2-13-58-73-166.us-east-2.compute.amazonaws.com:8080/Chordination/';
-  private url = 'http://localhost:9003/ChordSpring/';
+  private url = 'http://ec2-13-58-242-160.us-east-2.compute.amazonaws.com:8080/Chordination/';
   private s3PictureFolder = 'photos/';
   private bucketUrl = 'https://console.aws.amazon.com/s3/buckets/chordination/';
 
