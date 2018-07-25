@@ -27,10 +27,17 @@
     left: 70px;
 }
 
+.embed-container{
+    position: relative;
+    z-index: 1;
+    top: 100px;
+    left: 130px;
+}
+
 #posts{
     position:relative;
     text-align: left;
-    top: 110px;
+    top: 300px;
     font-size: 18px;
     color: black;
     left: 55px;
@@ -40,8 +47,8 @@
     font-weight: bold;
     color: black;
     position: relative;
-    top: 100px;
-    left: 68px;
+    top: 340px;
+    left: -730px;
 }
 h1{
     position: relative;
@@ -73,7 +80,7 @@ hr {
 .genre{
     position: relative;
     top: 300px;
-    right:-560px;
+    right:-610px;
     font-size: 16px;
     color:black;
 }
@@ -131,7 +138,7 @@ img{
 -webkit-border-radius: 15px 15px 15px 15px;
 border: 2px solid #010F0F;
 position: relative;
-left: 375px;
+left: 410px;
 }
 .profileIcon{
     background-color: white;
