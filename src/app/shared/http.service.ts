@@ -85,6 +85,11 @@ export class HttpService {
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
   }
 
+  public resetPassword(email) {
+    const params = {email: email};
+    return this.http.get(this.url.concat('forgetPassword.chord'), {params: params});
+  }
+
 //  public updateUserPicture(picture: File, callback?: (err, data) => void) {
 
 //    const params = {
