@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
     sessionStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
+
+  redirect() {
+    this.router.navigate(['/home/profile', this.user.userId]);
+  }
 }
