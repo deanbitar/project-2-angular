@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
@@ -18,7 +18,7 @@ import { AuthService } from './shared/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGaurdService } from './shared/auth-gaurd.service';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
-
+import { SpotifyServiceService } from './shared/spotify-service.service';
 
 
 @NgModule({
@@ -39,9 +39,10 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     AppRoutingModule,
     HttpModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [AuthService, HttpClientModule, AuthGaurdService],
+  providers: [AuthService, HttpClientModule, AuthGaurdService, SpotifyServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
