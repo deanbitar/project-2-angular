@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Register } from '../models/register';
 import { HttpService } from '../shared/http.service';
 import swal from 'sweetalert2';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   private genreOne;
   private genreTwo;
   private genreThree;
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, public router: Router) { }
 
   ngOnInit() {
   }
@@ -61,6 +62,8 @@ export class RegisterComponent implements OnInit {
     this.http.registerUser(this.firstname, this.lastname, this.email, this.dob, this.password, this.genreOne,
       this.genreTwo, this.genreThree).subscribe(data => this.parseResponse(data));
     swal('Success', 'Registration complete', 'success');
+    this.router.navigate(['/login']);
+
     }
   }
 
