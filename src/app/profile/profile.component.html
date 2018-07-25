@@ -3,7 +3,7 @@
     <div class="row" align="left">
       <div *ngIf="user">
         <br/>
-        <img id="image" style="height: 250px; width: 250px" class="center-block" src="https://image.ibb.co/jqsPDd/profile.jpg" />
+        <img id="image" style="height: 250px; width: 250px" class="center-block" [src]="this.user.picture" />
 
         <h1>{{ user.firstname }} {{ user.lastname }}</h1>
         <h3 id="useremail">Email: {{ user.email }}</h3>
