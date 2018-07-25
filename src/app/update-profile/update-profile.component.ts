@@ -42,7 +42,7 @@ export class UpdateProfileComponent implements OnInit {
   selectedPicture(event) {
     this.newPicture = event.target.files[0];
     console.log(this.newPicture);
-    this.chordApi.updateUserPicture(this.newPicture, this.handlePicChng);
+    this.chordApi.uploadPicture(this.newPicture, this.handlePicChng);
   }
 
   private handlePicChng(err, data) {
