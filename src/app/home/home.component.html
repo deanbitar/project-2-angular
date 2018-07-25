@@ -14,7 +14,7 @@
 <body class="body">
   <div class="row">
     <div class="container">
-        <img src="http://www.borovskeho.cz/wp-content/uploads/2016/03/Silueta-2.jpg" width="100px" (click) = 'redirect()'>
+        <img [src]="this.user.picture" width="100px" (click) = 'redirect()'>
       <div class="profile">
         <div class="fluid-container">
           <h5 id="firstname">{{user.firstname}} {{user.lastname}}</h5>
@@ -27,7 +27,7 @@
       <div class="icon-bar">
         <br/>
         <br/>
-        <a routerLink="feed">
+        <a routerLink="/home">
           <i class="fa fa-home"> Home</i>
         </a>
         <br/>
