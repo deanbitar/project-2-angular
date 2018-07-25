@@ -1,32 +1,32 @@
 <div class="container">
-    <div class="container">
-      <img id="image" src="https://image.ibb.co/jqsPDd/profile.jpg" />
-      <input type="file" (change)="selectedPicture($event)">
+</div>
+<div class="row">
+  <div class="container">
+    <div class="col col-sm-6">
+      <img id="image" [src]="this.user.picture" style="width: 150px; height: 150px"/>
+      <input type="file" class="uploadfile" (change)="selectedPicture($event)">
 
       <h1>{{ user.firstname }} {{ user.lastname }}</h1>
-
+      <div class="leftstuff">
+      <h3>Email: </h3>
+      <input id="email" type="email" [(ngModel)]="user.email" placeholder="Enter Email" class="form-control input-md" />
+      <h3>Date of Birth:</h3>
+      <input id="dob" type="text" [(ngModel)]="user.dob" placeholder="Enter dob" class="form-control input-md" />
     </div>
-    <div class="row">
-      <div class="container">
-        <div class="col col-sm-6">
-          <h3>Email: </h3>
-          <input id="email" type="email" [(ngModel)]="user.email" placeholder="Enter Email" class="form-control input-md"/>
-          <h3>Date of Birth:</h3>
-          <input id="dob" type="text" [(ngModel)]="user.dob" placeholder="Enter dob" class="form-control input-md"/>
-        </div>
+  </div>
+    <div class="col col-sm-6">
+      <div class="rightstuff">
+      <h3>Bio:</h3>
+      <textarea id="bio" type="text" [(ngModel)]="user.bio" placeholder="Enter bio" class="form-control input-md" rows="3"></textarea>
 
-        <div class="col col-sm-6">
-          <h3>Bio:</h3>
-          <textarea id="bio" type="text" [(ngModel)]="user.bio" placeholder="Enter bio" class="form-control input-md" rows="3"></textarea>
-
-          <h3>Favorite Genres:</h3>
-          <input id="genreOne" type="text" [(ngModel)]="user.genreOne" placeholder="Enter genreOne" class="form-control input-md"/>
-          <input id="genreTwo" type="text" [(ngModel)]="user.genreTwo" placeholder="Enter genreTwo" class="form-control input-md"/>
-          <input id="genreThree" type="text" [(ngModel)]="user.genreThree" placeholder="Enter genreThree" class="form-control input-md"/>
-
-        </div>
-        <button [routerLink]="['/home/profile', user.userId]">Cancel</button>
-        <button id="saveUser" (click) = 'saveUser()' class="btn btn-lrg pull-right" style="font-size : 14px">Save</button>
-      </div>
+      <h3>Favorite Genres:</h3>
+      <input id="genreOne" type="text" [(ngModel)]="user.genreOne" placeholder="Enter genreOne" class="form-control input-md" />
+      <input id="genreTwo" type="text" [(ngModel)]="user.genreTwo" placeholder="Enter genreTwo" class="form-control input-md" />
+      <input id="genreThree" type="text" [(ngModel)]="user.genreThree" placeholder="Enter genreThree" class="form-control input-md"
+      />
+      <button class="btn cancel" [routerLink]="['/home/profile', user.userId]">Cancel</button>
+      <button class="btn save" id="saveUser" (click)='saveUser()'>Save</button>
+    </div>
+    </div>
   </div>
 </div>
