@@ -1,17 +1,19 @@
 .body{
     background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/JrbItQz/abstract-geometric-background-triangles-and-lines-loop-4k-4096x2304_ekm8_sfzx__F0000.png);
-    height: 100vh;
+    height: 100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+    position:relative;
+    right:0px;
     background-size: cover;
 }
 #logo{
     position: absolute;
     background-color: #010F0F;
     top:0px;
-    left:16%;
+    left:15.5%;
     width:1100px;
     height:12%;
 }
