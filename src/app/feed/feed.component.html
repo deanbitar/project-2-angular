@@ -8,11 +8,20 @@
             <div class='row'>
                 <div class='container-fluid'>
                     <div *ngIf="isActive">
+                        <br/>
                         <textarea id="description" type="text" [(ngModel)]="post.description" placeholder="Enter Description" class="form-control input-md"
                             rows="3"></textarea>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
                         <button id="cancelPost" (click)="cancelPost()" class="btn btn-lrg pull-right" style="font-size : 14px">Cancel</button>
                         <a href="http://localhost:4200/home/feed">
-                            <button id="savePost" (click)='savePost()' class="btn btn-lrg pull-right" style="font-size : 14px">Save</button>
+                            <button id="savePost" (click)='savePost()' class="btn btn-lrg pull-right" style="font-size : 14px">Post</button>
                         </a>
                     </div>
                     <div *ngFor='let post of posts'>
