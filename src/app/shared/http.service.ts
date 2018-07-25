@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { User } from './user';
 // import * as AWS from 'aws-sdk/global';
-// import * as S3 from 'aws-sdk/clients/s3';
+import * as S3 from 'aws-sdk/clients/s3';
+import { AWSCreds } from './aws-creds';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -23,13 +23,13 @@ export class HttpService {
   private s3PictureFolder = 'photos/';
   private bucketUrl = 'https://console.aws.amazon.com/s3/buckets/chordination/';
 
-  // private bucket = new S3(
-  //   {
-  //     accessKeyId: 'AKIAJ3JKMRKOWD6FHJPQ',
-  //     secretAccessKey: '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',
-  //     region: 'us-east-1'
-  //   }
-  // );
+  private bucket = new S3(
+    {
+      accessKeyId: AWSCreds.accessKeyId,
+      secretAccessKey: AWSCreds.secretAccessKey,
+      region: AWSCreds.region
+    }
+  );
 
   constructor(private http: HttpClient) { }
 
@@ -90,14 +90,14 @@ export class HttpService {
     return this.http.get(this.url.concat('forgetPassword.chord'), {params: params});
   }
 
-//  public updateUserPicture(picture: File, callback?: (err, data) => void) {
+ public updateUserPicture(picture: File, callback?: (err, data) => void) {
 
-//    const params = {
-//      Bucket: 'chordination',
-//      Key: this.s3PictureFolder + picture.name,
-//      Body: picture
-//    };
+   const params = {
+     Bucket: 'chordination',
+     Key: this.s3PictureFolder + picture.name,
+     Body: picture
+   };
 
-//    this.bucket.upload(params, callback);
-//  }
+   this.bucket.upload(params, callback);
+ }
 }
