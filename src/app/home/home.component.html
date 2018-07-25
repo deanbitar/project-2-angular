@@ -14,43 +14,46 @@
 <body class="body">
   <div class="row">
     <div class="container">
-      <div class="row align-items-start">
-        <div class="profileIcon">
-          <img src="http://www.borovskeho.cz/wp-content/uploads/2016/03/Silueta-2.jpg" width="120px">
+        <img src="http://www.borovskeho.cz/wp-content/uploads/2016/03/Silueta-2.jpg" width="100px">
+      <div class="profile">
+        <div class="fluid-container">
+          <h5 id="firstname">{{user.firstname}} {{user.lastname}}</h5>
         </div>
-        <div class="profile">
-          <div class="fluid-container">
-            <h5 id="firstname">{{user.firstname}} {{user.lastname}}</h5>
-          </div>
-        </div>
-        <div class="icon-bar">
-          <br/>
-          <br/>
-          <a routerLink="feed">
-            <i class="fa fa-home"> Home</i>
-          </a>
-          <a [routerLink]="['profile', user.userId]">
-            <i class="fa fa-user-circle"> Profile </i>
-          </a>
-          <a routerLink="friends">
-            <i class="fa fa-group"> Friends</i>
-          </a>
-          <a routerLink="spotify">
-            <a href="http://spotify.com">
-              <i class="fa fa-spotify"> Spotify</i>
-            </a>
-          </a>
-          <a (click)="clickedLogout()">
-            <i class="fa fa-close"> Logout</i>
-          </a>
-        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div class="icon-bar">
+        <br/>
+        <br/>
+        <a routerLink="feed">
+          <i class="fa fa-home"> Home</i>
+        </a>
+        <br/>
+        <a [routerLink]="['profile', user.userId]">
+          <i class="fa fa-user-circle"> Profile </i>
+        </a>
+        <br/>
+        <a routerLink="friends">
+          <i class="fa fa-group"> Friends</i>
+        </a>
+        <br/>
+        <a href="http://spotify.com">
+          <i class="fa fa-spotify"> Spotify</i>
+        </a>
+        <br/>
+        <a (click)="clickedLogout()">
+          <i class="fa fa-close"> Logout</i>
+        </a>
       </div>
     </div>
   </div>
   <div class="feed">
     <router-outlet></router-outlet>
   </div>
-  <div class="HeaderLogo">
-    <img src="https://image.ibb.co/gmmhEJ/finallogo.png" width="300px">
+  <div class="container" id="logo">
+    <img class="logoimage" src="https://image.ibb.co/gmmhEJ/finallogo.png" width="210px">
   </div>
+
 </body>
