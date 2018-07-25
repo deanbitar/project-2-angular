@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-// import * as AWS from 'aws-sdk/global';
+import * as AWS from 'aws-sdk/global';
 import * as S3 from 'aws-sdk/clients/s3';
 import { AWSCreds } from './aws-creds';
 
@@ -18,8 +18,8 @@ const httpOptions = {
 })
 export class HttpService {
 
-  // private url = 'http://ec2-13-58-242-160.us-east-2.compute.amazonaws.com:8080/Chordination/';
-  private url = 'http://localhost:9005/ChordSpring/';
+  private url = 'http://ec2-13-58-242-160.us-east-2.compute.amazonaws.com:8080/Chordination/';
+ // private url = 'http://localhost:9005/ChordSpring/';
   private s3PictureFolder = 'photos/';
   private bucketUrl = 'https://console.aws.amazon.com/s3/buckets/chordination/';
 
