@@ -62,7 +62,10 @@ export class RegisterComponent implements OnInit {
     this.http.registerUser(this.firstname, this.lastname, this.email, this.dob, this.password, this.genreOne,
       this.genreTwo, this.genreThree).subscribe(data => this.parseResponse(data));
     swal('Success', 'Registration complete', 'success');
-    this.router.navigate(['/login']);
+
+    setTimeout((router: Router) => {
+      this.router.navigate(['/login']);
+  }, 2000);
 
     }
   }
