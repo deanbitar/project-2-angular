@@ -25,7 +25,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     this.post = {
-      author: null, description: null, picture: null, submitTime: null, id: null
+      author: null, description: null, picture: null, submitTime: null, id: null, likedUsers: null
     };
     const userJSON = sessionStorage.getItem('user');
     this.user = JSON.parse(userJSON);
@@ -53,7 +53,7 @@ export class FeedComponent implements OnInit {
       this.router.navigate(['/home/feed']);
   }, 2000);
     this.post = {
-      author: this.user, description: this.post.description, picture: this.post.picture, submitTime: null, id: null
+      author: this.user, description: this.post.description, picture: this.post.picture, submitTime: null, id: null, likedUsers: null
     };
 
     this.http.createPost(this.post.author.userId, this.post.description, this.post.picture).subscribe(data => this.parsePost(data));
@@ -61,7 +61,7 @@ export class FeedComponent implements OnInit {
 
   parsePost(postJSON) {
     this.post = {
-      author: this.user, description: postJSON.description, picture: postJSON.picture, submitTime: null, id: null
+      author: this.user, description: postJSON.description, picture: postJSON.picture, submitTime: null, id: null, likedUsers: null
     };
   }
 
@@ -73,5 +73,21 @@ export class FeedComponent implements OnInit {
     this.isActive = false;
   }
 
+  postLikedByUser(post: Post): boolean {
 
+    for (const user of post.likedUsers) {
+      if (user.userId === this.user.userId) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  likePost(postId) {
+    this.http.likePost(this.user.userId, postId).subscribe(resp => this.handleLikedPost(resp));
+  }
+
+  handleLikedPost(postJSON) {
+    location.reload();
+  }
 }
