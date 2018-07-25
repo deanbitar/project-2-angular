@@ -16,7 +16,6 @@ import { FriendsComponent } from './friends/friends.component';
 import { SpotifyComponent } from './spotify/spotify.component';
 import { AuthService } from './shared/auth.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CreatePostComponent } from './create-post/create-post.component';
 import { AuthGaurdService } from './shared/auth-gaurd.service';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { SpotifyServiceService } from './shared/spotify-service.service';
@@ -33,7 +32,6 @@ import { SpotifyServiceService } from './shared/spotify-service.service';
     FeedComponent,
     FriendsComponent,
     SpotifyComponent,
-    CreatePostComponent,
     UpdateProfileComponent,
   ],
   imports: [

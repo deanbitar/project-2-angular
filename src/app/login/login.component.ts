@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../shared/http.service';
-import { Http } from '@angular/http';
 import { User } from '../shared/user';
 import { Router } from '@angular/router';
-
+import swal from 'sweetalert2';
 
 
 @Component({
@@ -18,8 +17,18 @@ export class LoginComponent implements OnInit {
   constructor(private chordApi: HttpService, private router: Router) { }
 
   public clickedLogin () {
+    const email = ((document.getElementById('email') as HTMLInputElement).value);
+    const password = ((document.getElementById('password') as HTMLInputElement).value);
+    if (email.length === 0) {
+      console.log(email.length);
+      swal('Warning!', 'There appears to be some empty fields', 'error');
+     } else if (password.length === 0) {
+      console.log(password.length);
+      swal('Warning!', 'There appears to be some empty fields', 'error');
+     } else {
     this.chordApi.loginUser(this.email, this.password).subscribe(data => this.parseUser(data));
   }
+}
 
   parseUser(userJSON) {
     console.log(userJSON);

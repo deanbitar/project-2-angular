@@ -13,6 +13,7 @@ import { Post } from '../shared/post';
 export class ProfileComponent implements OnInit {
   user: User;
   posts: Post[];
+  isMyProfile: boolean;
 
   constructor(private route: ActivatedRoute, private httpService: HttpService) {
     this.route.params.subscribe(params => this.changeDisplayedProfile(params));
@@ -20,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     const userId = Number(this.route.snapshot.paramMap.get('userId'));
+    this.isMyProfile = (userId === JSON.parse(sessionStorage.getItem('user')).userId);
     this.httpService.getUserById(userId)
       .subscribe(user => this.parseUser(user));
     this.httpService.getUserPosts(userId).subscribe(data => this.parsePosts(data));

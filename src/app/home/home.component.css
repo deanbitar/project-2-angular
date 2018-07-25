@@ -7,9 +7,15 @@
     overflow-x: hidden; 
     background-size: cover;
 }
-.jumbotron {
-  height: 100vh;
-  overflow: auto;
+.container{
+    background-color: #010F0F;
+    height: 100vh;
+    width: 215px;
+    margin-left: 0px;
+}
+.row{
+    margin-left: 0px;
+    width: 210px;
 }
 .scrollable-content {
       background-color: #ffffff;
@@ -20,33 +26,34 @@
   }
 .profile{
     color:white;
-    text-align: center;
-    position: relative;
-    right: 75px;
-    top: 35px;
-    border-radius: 15px 15px 15px 15px;
-    -moz-border-radius: 15px 15px 15px 15px;
-    -webkit-border-radius: 15px 15px 15px 15px;
-    border: 8px none #000000;
-    background-color: #000000;
     width: 145px;
+    position: relative;
+    top:20px;
+    left:45px;
+    font-size: 18px;
 }
+
 .h5, h5 {
     font-size: 1.8rem;
 }
-.col-sm-1{
-    padding-right: 40;
+.feed{
+    position: absolute;
+    top:130px;
+    left:285px;
 }
-
-  .icon-bar {
-    width: 178px; /* Set a specific width */
+.icon-bar {
+    width: 200px; /* Set a specific width */
     background-color: #010F0F; 
     border-radius: 15px 15px 15px 15px;
 -moz-border-radius: 15px 15px 15px 15px;
 -webkit-border-radius: 15px 15px 15px 15px;
 border: 8px none #000000;
+position: relative;
+left: -10px;
+top:20px;
     
 }
+
 
 img{
     border-radius: 15px 15px 15px 15px;
@@ -59,6 +66,10 @@ img{
     -moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius: 15px 15px 15px 15px;
     border: 2px solid #000000;
+    position: relative;
+    top:-15px;
+    left:30px;
+
 }
 .icon-bar a {
     display: block; /* Make the links appear below each other instead of side-by-side */
@@ -85,16 +96,17 @@ border: 8px none #000000;
     background-color: #82b74b;
 } 
 .profileIcon {
-    position: absolute;
-    right: 17px;
-    top: 15px;
+    position: relative;
+    right: -20px;
+    top: 20px;
     
 }
 p {
     font-size: 14px;
 }
-.HeaderLogo {
-    text-align:center;
-    position: relative;
-    left: 55px;
+
+.HeaderLogo{
+    position: absolute;
+    top:0px;
+    left:625px;
 }
