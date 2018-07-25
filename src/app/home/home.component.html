@@ -35,8 +35,10 @@
           <a routerLink="friends">
             <i class="fa fa-group"> Friends</i>
           </a>
-          <a href="http://spotify.com">
-            <i class="fa fa-spotify"> Spotify</i>
+          <a routerLink="spotify">
+            <a href="http://spotify.com">
+              <i class="fa fa-spotify"> Spotify</i>
+            </a>
           </a>
           <a (click)="clickedLogout()">
             <i class="fa fa-close"> Logout</i>
@@ -46,10 +48,9 @@
     </div>
   </div>
   <div class="feed">
-      <router-outlet></router-outlet>
-    </div>
-    <div class="HeaderLogo">
-      <img src="https://image.ibb.co/gmmhEJ/finallogo.png" width="300px">
-    </div>
-
+    <router-outlet></router-outlet>
+  </div>
+  <div class="HeaderLogo">
+    <img src="https://image.ibb.co/gmmhEJ/finallogo.png" width="300px">
+  </div>
 </body>

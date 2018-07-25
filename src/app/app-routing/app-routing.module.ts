@@ -10,6 +10,7 @@ import { FeedComponent } from '../feed/feed.component';
 import { FriendsComponent } from '../friends/friends.component';
 import { SpotifyComponent } from '../spotify/spotify.component';
 import { AuthGaurdService } from '../shared/auth-gaurd.service';
+import { SpotifyServiceService} from '../shared/spotify-service.service';
 import { UpdateProfileComponent } from '../update-profile/update-profile.component';
 
 
