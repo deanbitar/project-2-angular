@@ -1,0 +1,8 @@
+<script src="https://sdk.scdn.co/spotify-player.js"></script> 
+<button (click) = 'click()' id="btn">CLICK</button>
+<iframe src='https://embed.spotify.com/?uri=spotify:track:63M8PK8yavNITSViKUB62p' frameborder='0' allowtransparency='true' id="iframe" style="visibility: hidden;"></iframe>
+<form>
+<div class="form-group">
+    <input type="text" name="searchStr" [(ngModel)]="searchStr" (keyup) = 'searchMusic()' class="form-control" placeholder="search music....">
+</div>
+</form>
