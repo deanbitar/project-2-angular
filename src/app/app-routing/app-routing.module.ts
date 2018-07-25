@@ -17,7 +17,6 @@ import { UpdateProfileComponent } from '../update-profile/update-profile.compone
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   {path: 'register', component: RegisterComponent },
@@ -30,9 +29,9 @@ const routes: Routes = [
   { path: 'friends', component: FriendsComponent, canActivate: [AuthGaurdService] },
   { path: 'spotify', component: SpotifyComponent, canActivate: [AuthGaurdService] },
   { path: '', redirectTo: '/home/feed', pathMatch: 'full' },
-
-
 ] },
+
+ { path: '**', redirectTo: '/login', pathMatch: 'full' }
 
 
 
