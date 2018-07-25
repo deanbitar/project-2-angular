@@ -35,8 +35,6 @@ export class RegisterComponent implements OnInit {
     const register4 = ((document.getElementById('text_field5') as HTMLInputElement).value);
     const register5 = ((document.getElementById('text_field6') as HTMLInputElement).value);
     const register6 = ((document.getElementById('text_field7') as HTMLInputElement).value);
-    const register7 = ((document.getElementById('text_field8') as HTMLInputElement).value);
-    const register8 = ((document.getElementById('text_field9') as HTMLInputElement).value);
 
     if (register.length === 0) {
       console.log(register.length);
@@ -58,12 +56,6 @@ export class RegisterComponent implements OnInit {
       swal('Warning!', 'There appears to be some empty fields', 'error');
      } else if (register6.length === 0) {
       console.log(register6.length);
-      swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register7.length === 0) {
-      console.log(register7.length);
-      swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register8.length === 0) {
-      console.log(register8.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
      } else {
     this.http.registerUser(this.firstname, this.lastname, this.email, this.dob, this.password, this.genreOne,
