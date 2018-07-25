@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     console.log(userJSON);
 
     if (userJSON == null) {
-      alert('invalid username/password');
+      swal('Warning', 'Invalid email/password', 'warning');
     } else {
       const user: User = {userId: userJSON.userId, firstname: userJSON.firstname, lastname: userJSON.lastname,
         email: userJSON.email, dob: userJSON.dob, password: userJSON.password, genreOne: userJSON.genreOne,

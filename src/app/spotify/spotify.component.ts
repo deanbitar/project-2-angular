@@ -9,9 +9,17 @@ import { SpotifyServiceService } from '../shared/spotify-service.service';
 })
 export class SpotifyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spotify: SpotifyServiceService) { }
 
   ngOnInit() {
+
   }
 
+
+
+  click() {
+    const iframe = ((document.getElementById('iframe') as HTMLInputElement).style.visibility = 'visible');
+    const button = ((document.getElementById('btn') as HTMLInputElement).style.visibility = 'hidden');
+
+  }
 }
