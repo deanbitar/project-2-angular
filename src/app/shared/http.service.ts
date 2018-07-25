@@ -52,6 +52,11 @@ export class HttpService {
     return this.http.get(path, { params: params });
   }
 
+  public createPost(authorId, message, picture) {
+    const params = {userId: authorId, message: message, picture: picture};
+    return this.http.get(this.url.concat('createPost.chord'), {params: params});
+  }
+
   public getUserFeed(userId) {
     const path = this.url.concat('getUserFeed.chord');
     const params = { userId: userId };
@@ -80,14 +85,14 @@ export class HttpService {
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
   }
 
-  public updateUserPicture(picture: File, callback?: (err, data) => void) {
+//  public updateUserPicture(picture: File, callback?: (err, data) => void) {
 
-    const params = {
-      Bucket: 'chordination',
-      Key: this.s3PictureFolder + picture.name,
-      Body: picture
-    };
+//    const params = {
+//      Bucket: 'chordination',
+//      Key: this.s3PictureFolder + picture.name,
+//      Body: picture
+//    };
 
-    // this.bucket.upload(params, callback);
-  }
+//    this.bucket.upload(params, callback);
+//  }
 }
