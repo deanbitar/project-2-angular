@@ -18,8 +18,8 @@ const httpOptions = {
 })
 export class HttpService {
 
-  // private url = 'http://ec2-13-58-73-166.us-east-2.compute.amazonaws.com:8080/Chordination/';
-  private url = 'http://ec2-13-58-242-160.us-east-2.compute.amazonaws.com:8080/Chordination/';
+   private url = 'http://localhost:9003/ChordSpring/';
+  // private url = 'http://ec2-13-58-242-160.us-east-2.compute.amazonaws.com:8080/Chordination/';
   private s3PictureFolder = 'photos/';
   private bucketUrl = 'https://console.aws.amazon.com/s3/buckets/chordination/';
 
@@ -83,6 +83,11 @@ export class HttpService {
       genreOne: user.genreOne, genreTwo: user.genreTwo, genreThree: user.genreThree
     };
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
+  }
+
+  public resetPassword(email) {
+    const params = {email: email};
+    return this.http.get(this.url.concat('forgetPassword.chord'), {params: params});
   }
 
 //  public updateUserPicture(picture: File, callback?: (err, data) => void) {
