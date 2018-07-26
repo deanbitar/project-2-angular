@@ -21,6 +21,7 @@ export class ForgotPasswordComponent implements OnInit {
     if (forgot.length === 0) {
       swal('Warning', 'Email seems to be incorrect or field is empty', 'warning');
     } else {
+      swal('Success', 'Password has been reset, please check email', 'success');
     this.httpService.resetPassword(this.email).subscribe(data => this.parseData(data));
   }
 }
