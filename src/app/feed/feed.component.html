@@ -32,7 +32,7 @@
                         </div>
                         <p class="description">{{post.description}}</p>
                         <div class="image">
-                            <span *ngIf="post.picture !== 'null'">
+                            <span *ngIf="post.picture !== 'undefined'">
                                 <img [src]="post.picture" />
                             </span>
                         </div>
