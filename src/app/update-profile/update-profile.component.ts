@@ -64,7 +64,7 @@ export class UpdateProfileComponent implements OnInit {
       user.picture = data.Location;
 
       sessionStorage.setItem('user', JSON.stringify(user));
-      alert('File uploaded!');
+      swal('Success', 'Picture uploaded!', 'success');
     }
   }
 
