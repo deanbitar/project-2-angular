@@ -88,7 +88,9 @@ a {
 p{
   text-align: center;
 }
-
+input{
+  background-color: #F1F1F1;
+}
 .firstname {
   color:black;
 }
@@ -103,6 +105,7 @@ p{
 
 .dob {
   color:black;
+
 }
 
 .pswd {
