@@ -31,11 +31,11 @@
   </div>
 </div>
 
-<div id = "changePassword" class = "modal">
+<div id = "changePasswordThing" class = "modal">
     <h3>New Password: </h3>
-    <input id="password" type="password" [(ngModel)]="password" placeholder="Enter Password" class="form-control input-md" />
+    <input id="password" type="password" [(ngModel)]="password" class="form-control input-md" />
     <h3>Confirm Password: </h3>
-    <input id="password" type="password" placeholder="Enter Password" class="form-control input-md" />
+    <input id="passwordConfirm" type="password" [(ngModel)]="passwordConfirm" class="form-control input-md" />
 
     <button class="btn cancel" id="cancel" (click)='cancel()'>Cancel</button>
     <button class="btn save" id="savePassword" (click)='savePassword()'>Save</button>

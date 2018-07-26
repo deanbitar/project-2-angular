@@ -12,6 +12,7 @@ import swal from 'sweetalert2';
 })
 export class UpdateProfileComponent implements OnInit {
   password: string;
+  passwordConfirm: string;
   user: User;
   newPicture: File;
 
@@ -24,7 +25,6 @@ export class UpdateProfileComponent implements OnInit {
       this.router.navigate(['/home/profile', this.user.userId]);
   }, 2000);
 
-    this.user.password = this.password;
     this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
     this.chordApi.updateUser(this.user).subscribe(data => this.parseUser(data));
   }
@@ -69,6 +69,22 @@ export class UpdateProfileComponent implements OnInit {
   }
 
   changePassword() {
-    document.getElementById('changePassword').style.display = 'block';
+    document.getElementById('changePasswordThing').style.display = 'block';
+  }
+
+  cancel() {
+    document.getElementById('changePasswordThing').style.display = 'none';
+  }
+
+  savePassword() {
+    if (this.password !== this.passwordConfirm) {
+      alert('passwords must match');
+    } else {
+    this.user.password = this.password;
+    this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
+    this.chordApi.updatePassword(this.user).subscribe(data => this.parseUser(data));
+    document.getElementById('changePasswordThing').style.display = 'none';
+    alert('success');
+    }
   }
 }
