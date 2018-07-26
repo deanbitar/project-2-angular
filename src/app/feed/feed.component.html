@@ -12,7 +12,7 @@
                         <textarea id="description" type="text" [(ngModel)]="post.description" placeholder="Enter Description" class="form-control input-md"
                             rows="3"></textarea>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="selectPostPic($event)" />
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                         <br/>
@@ -32,11 +32,15 @@
                         </div>
                         <p class="description">{{post.description}}</p>
                         <div class="image">
-                            <span>{{post.picture}}</span>
+                            <span *ngIf="post.picture !== 'null'">
+                                <img [src]="post.picture" />
+                            </span>
                         </div>
                         <h6>{{post.likedUsers.length}} Likes</h6>
                         <h6 class="date">{{getDate(post.submitTime)}}</h6>
-                        <button *ngIf='!postLikedByUser(post)' (click)="likePost(post.postId)">Like</button>
+                        <button *ngIf='!postLikedByUser(post)' (click)="likePost(post.postId)" class="like">
+                            <img src="https://preview.ibb.co/mhGY18/facebook_like_thumb_green.png" width="20px" height="20px">
+                        </button>
                         <br/>
                         <br/>
                     </div>
@@ -45,3 +49,4 @@
         </div>
     </div>
 </div>
+
