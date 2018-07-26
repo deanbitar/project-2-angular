@@ -36,7 +36,7 @@
                         </div>
                         <h6>{{post.likedUsers.length}} Likes</h6>
                         <h6 class="date">{{getDate(post.submitTime)}}</h6>
-                        <button *ngIf='!postLikedByUser(post)' (click)="likePost(post.postId)">Like</button>
+                        <button *ngIf='!postLikedByUser(post)' (click)="likePost(post.postId)" class="like">Like</button>
                         <br/>
                         <br/>
                     </div>
