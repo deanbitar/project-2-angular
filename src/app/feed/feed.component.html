@@ -33,7 +33,7 @@
                         <p class="description">{{post.description}}</p>
                         <div class="image">
                             <span *ngIf="post.picture !== 'undefined'">
-                                <img [src]="post.picture" />
+                                <img [src]="post.picture" class="img" />
                             </span>
                         </div>
                         <h6>{{post.likedUsers.length}} Likes</h6>
