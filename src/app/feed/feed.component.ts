@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/User';
 import { HttpService } from '../shared/http.service';
 import { Post } from '../shared/post';
+import swal from 'sweetalert2';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -19,7 +21,7 @@ export class FeedComponent implements OnInit {
   isActive: boolean;
   // users: User[] = [];
 
-  constructor(private http: HttpService) {
+  constructor(private http: HttpService, public router: Router) {
 
   }
 
@@ -47,7 +49,11 @@ export class FeedComponent implements OnInit {
   }
 
   savePost() {
-
+    const post = ((document.getElementById('savePost') as HTMLInputElement).value);
+    swal('Success!', 'Post has been created', 'success');
+    setTimeout((router: Router) => {
+      this.router.navigate(['/home/feed']);
+  }, 2000);
     this.post = {
       author: this.user, description: this.post.description, picture: FeedComponent.newPostPic, submitTime: null, id: null, likedUsers: null
     };
