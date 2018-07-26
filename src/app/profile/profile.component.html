@@ -18,10 +18,10 @@
       <div class="genre">
         <h3>Favorite Genres:</h3>
         <h6> {{ user.genreOne }}</h6>
-        <div *ngIf="user.genreTwo">
+        <div *ngIf="user.genreTwo !== 'null'">
           <h6> {{ user.genreTwo }}</h6>
         </div>
-        <div *ngIf="user.genreThree">
+        <div *ngIf="user.genreThree !== 'null'">
           <h6> {{ user.genreThree }}</h6>
         </div>
       </div>
