@@ -31,6 +31,24 @@
       text-indent: 20px;
   }
 
+#changePasswordThing{
+    width: 1100px;
+    height:500px;
+    border: 4px solid #010F0F;
+    background-color: #E6E9D6;
+    position: absolute;
+    left:-75px;
+    top:16px;
+    text-align: center;
+}
+.cancelsecond{
+    position: relative;
+    top: 10px;
+    left:500px;
+    background-color: #010F0F;
+    color: white;
+}
+
 .col-sm-1{
     padding-right: 40;
 }
