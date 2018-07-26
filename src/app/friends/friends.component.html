@@ -1,27 +1,30 @@
 <div class="row">
   <div class="container">
 
-<br>
-<h2>Search for Friends</h2>
-<br>
-<div>
-  <label>Name:
-    <input #searchBox />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="search(searchBox.value);">
-    Search
-  </button>
-</div>
-<ul class="users">
-  <li *ngFor="let user of users">
-    <h2>User Details</h2>
-    <div><span>Id: </span>{{user.userId}}</div>
-    <div><span>First Name: </span>{{user.firstname}}</div>
-    <div><span>Last Name: </span>{{user.lastname}}</div>
-    <div><span>Email: </span>{{user.email}}</div>
-    <div><span>Date of Birth: </span>{{user.dob}}</div>
-  </li>
-</ul>
-</div>
+    <br>
+    <div class="h2">
+      <h2>Search for Friends</h2>
+    </div>
+    <br>
+    <div>
+      <div class="search">
+        <label class="Name">Name:
+          <input #searchBox style="margin:5px" />
+        </label>
+
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button (click)="search(searchBox.value);" style="margin:5px" class="button">
+          Search
+        </button>
+      </div>
+    </div>
+    <ul class="users">
+      <li *ngFor="let user of users">
+        <p>
+          <img [src]="user.picture" style="width: 75px; height: 75px" />
+          <a [routerLink]="['/home/profile', user.userId]" style="font-size: 20px;font-weight: bold;">{{user.firstname}} {{user.lastname}}</a>
+        </p>
+      </li>
+    </ul>
+  </div>
 </div>

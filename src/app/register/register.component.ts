@@ -40,43 +40,48 @@ export class RegisterComponent implements OnInit {
     if (register.length === 0) {
       console.log(register.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register1.length === 0) {
+    } else if (register1.length === 0) {
       console.log(register1.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register2.length === 0) {
+    } else if (register2.length === 0) {
       console.log(register2.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register3.length === 0) {
+    } else if (register3.length === 0) {
       console.log(register3.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register4.length === 0) {
+    } else if (register4.length === 0) {
       console.log(register4.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register5.length === 0) {
+    } else if (register5.length === 0) {
       console.log(register5.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else if (register6.length === 0) {
+    } else if (register6.length === 0) {
       console.log(register6.length);
       swal('Warning!', 'There appears to be some empty fields', 'error');
-     } else {
-    this.http.registerUser(this.firstname, this.lastname, this.email, this.dob, this.password, this.genreOne,
-      this.genreTwo, this.genreThree).subscribe(data => this.parseResponse(data));
-    swal('Success', 'Registration complete', 'success');
-
-    setTimeout((router: Router) => {
-      this.router.navigate(['/login']);
-  }, 2000);
-
+    } else if (register4 !== register5) {
+      swal('Warning!', 'The passwords entered don\'t match!', 'error');
+    } else {
+      this.http.registerUser(this.firstname, this.lastname, this.email, this.dob, this.password, this.genreOne,
+        this.genreTwo, this.genreThree).subscribe(data => this.parseResponse(data));
     }
   }
 
-// (register.valueOf.length !== 0)
+  // (register.valueOf.length !== 0)
 
-parseResponse(response) {
-  console.log(response);
-}
+  parseResponse(response) {
+    console.log(response);
 
-clicked() {
+    if (response.status === 'ok') {
 
-}
+      swal('Success', 'Registration complete', 'success');
+
+      setTimeout((router: Router) => {
+        this.router.navigate(['/login']);
+      }, 2000);
+    } else if (response.status === 'email taken') {
+      swal('Error', 'Email is already associated with an account', 'warning');
+    } else {
+      swal('Error', 'Something went horribly wrong!', 'warning');
+    }
+  }
 }
