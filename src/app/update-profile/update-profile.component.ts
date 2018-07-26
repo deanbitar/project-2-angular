@@ -11,7 +11,7 @@ import swal from 'sweetalert2';
   styleUrls: ['./update-profile.component.css']
 })
 export class UpdateProfileComponent implements OnInit {
-
+  password: string;
   user: User;
   newPicture: File;
 
@@ -24,6 +24,7 @@ export class UpdateProfileComponent implements OnInit {
       this.router.navigate(['/home/profile', this.user.userId]);
   }, 2000);
 
+    this.user.password = this.password;
     this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
     this.chordApi.updateUser(this.user).subscribe(data => this.parseUser(data));
   }
@@ -65,5 +66,9 @@ export class UpdateProfileComponent implements OnInit {
       sessionStorage.setItem('user', JSON.stringify(user));
       alert('File uploaded!');
     }
+  }
+
+  changePassword() {
+    document.getElementById('changePassword').style.display = 'block';
   }
 }
