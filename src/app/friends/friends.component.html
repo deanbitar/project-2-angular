@@ -2,16 +2,21 @@
   <div class="container">
 
     <br>
-    <h2>Search for Friends</h2>
+    <div class="h2">
+      <h2>Search for Friends</h2>
+    </div>
     <br>
     <div>
-      <label>Name:
-        <input #searchBox />
-      </label>
-      <!-- (click) passes input value to add() and then clears the input -->
-      <button (click)="search(searchBox.value);">
-        Search
-      </button>
+      <div class="search">
+        <label class="Name">Name:
+          <input #searchBox style="margin:5px" />
+        </label>
+
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button (click)="search(searchBox.value);" style="margin:5px" class="button">
+          Search
+        </button>
+      </div>
     </div>
     <ul class="users">
       <li *ngFor="let user of users">
