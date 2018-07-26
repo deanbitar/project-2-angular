@@ -9,8 +9,12 @@ import { Post } from '../shared/post';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+
+  static newPostPic: string;
+
   user: User;
   post: Post;
+
   private posts: Post[];
   isActive: boolean;
   // users: User[] = [];
@@ -18,8 +22,6 @@ export class FeedComponent implements OnInit {
   constructor(private http: HttpService) {
 
   }
-
-
 
   ngOnInit() {
     this.post = {
@@ -47,7 +49,7 @@ export class FeedComponent implements OnInit {
   savePost() {
 
     this.post = {
-      author: this.user, description: this.post.description, picture: this.post.picture, submitTime: null, id: null, likedUsers: null
+      author: this.user, description: this.post.description, picture: FeedComponent.newPostPic, submitTime: null, id: null, likedUsers: null
     };
 
     this.http.createPost(this.post.author.userId, this.post.description, this.post.picture).subscribe(data => this.parsePost(data));
@@ -83,5 +85,21 @@ export class FeedComponent implements OnInit {
 
   handleLikedPost(postJSON) {
     location.reload();
+  }
+
+  selectPostPic(event) {
+    let picture: File;
+    picture = event.target.files[0];
+    this.http.uploadPicture(picture, this.handlePicUpload);
+  }
+
+  handlePicUpload(err, data) {
+    if (err) {
+      console.log('There was an error uploading the picture: ', err);
+    } else {
+      console.log(data);
+      FeedComponent.newPostPic = data.Location;
+      alert('File uploaded!');
+    }
   }
 }
