@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/User';
 import { HttpService } from '../shared/http.service';
 import { Post } from '../shared/post';
+import swal from 'sweetalert2';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -9,17 +11,19 @@ import { Post } from '../shared/post';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+
+  static newPostPic: string;
+
   user: User;
   post: Post;
+
   private posts: Post[];
   isActive: boolean;
   // users: User[] = [];
 
-  constructor(private http: HttpService) {
+  constructor(private http: HttpService, public router: Router) {
 
   }
-
-
 
   ngOnInit() {
     this.post = {
@@ -45,9 +49,13 @@ export class FeedComponent implements OnInit {
   }
 
   savePost() {
-
+    const post = ((document.getElementById('savePost') as HTMLInputElement).value);
+    swal('Success!', 'Post has been created', 'success');
+    setTimeout((router: Router) => {
+      this.router.navigate(['/home/feed']);
+  }, 2000);
     this.post = {
-      author: this.user, description: this.post.description, picture: this.post.picture, submitTime: null, id: null, likedUsers: null
+      author: this.user, description: this.post.description, picture: FeedComponent.newPostPic, submitTime: null, id: null, likedUsers: null
     };
 
     this.http.createPost(this.post.author.userId, this.post.description, this.post.picture).subscribe(data => this.parsePost(data));
@@ -83,5 +91,21 @@ export class FeedComponent implements OnInit {
 
   handleLikedPost(postJSON) {
     location.reload();
+  }
+
+  selectPostPic(event) {
+    let picture: File;
+    picture = event.target.files[0];
+    this.http.uploadPicture(picture, this.handlePicUpload);
+  }
+
+  handlePicUpload(err, data) {
+    if (err) {
+      console.log('There was an error uploading the picture: ', err);
+    } else {
+      console.log(data);
+      FeedComponent.newPostPic = data.Location;
+      alert('File uploaded!');
+    }
   }
 }

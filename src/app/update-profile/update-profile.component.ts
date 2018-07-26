@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../shared/http.service';
 import { User } from '../shared/user';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-update-profile',
@@ -16,6 +18,12 @@ export class UpdateProfileComponent implements OnInit {
   constructor(private chordApi: HttpService, private router: Router) { }
 
   public saveUser() {
+    const save = ((document.getElementById('saveUser') as HTMLInputElement).value);
+    swal('Success!', 'Profile edits applied', 'success');
+    setTimeout((router: Router) => {
+      this.router.navigate(['/home/profile', this.user.userId]);
+  }, 2000);
+
     this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
     this.chordApi.updateUser(this.user).subscribe(data => this.parseUser(data));
   }
