@@ -12,7 +12,7 @@
                         <textarea id="description" type="text" [(ngModel)]="post.description" placeholder="Enter Description" class="form-control input-md"
                             rows="3"></textarea>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="selectPostPic($event)" />
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                         <br/>
@@ -32,7 +32,9 @@
                         </div>
                         <p class="description">{{post.description}}</p>
                         <div class="image">
-                            <span>{{post.picture}}</span>
+                            <span *ngIf="post.picture !== 'null'">
+                                <img [src]="post.picture" />
+                            </span>
                         </div>
                         <h6>{{post.likedUsers.length}} Likes</h6>
                         <h6 class="date">{{getDate(post.submitTime)}}</h6>
