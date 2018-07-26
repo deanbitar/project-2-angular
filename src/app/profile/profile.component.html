@@ -3,7 +3,7 @@
     <div class="row" align="left">
       <div *ngIf="user">
         <br/>
-        <img id="image" style="height: 250px; width: 250px" class="center-block" [src]="this.user.picture" />
+        <img id="profile" style="height: 250px; width: 250px; margin-left: 162%" [src]="this.user.picture" />
 
         <h1>{{ user.firstname }} {{ user.lastname }}</h1>
         <h3 id="useremail">Email: {{ user.email }}</h3>
@@ -42,10 +42,14 @@
           <p class="description">{{post.description}}</p>
           <br/>
           <div class="image">
-            <span>{{post.picture}}</span>
+              <span *ngIf="post.picture !== 'null'">
+                  <img [src]="post.picture" />
+              </span>
           </div>
           <h5 class="date">{{getDate(post.submitTime)}}</h5>
+          <br/>
         </div>
+        <br/>
       </div>
     </div>
   </div>
