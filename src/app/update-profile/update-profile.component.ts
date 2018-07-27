@@ -19,31 +19,32 @@ export class UpdateProfileComponent implements OnInit {
   constructor(private chordApi: HttpService, private router: Router) { }
 
   public saveUser() {
-    const save = ((document.getElementById('saveUser') as HTMLInputElement).value);
-    swal('Success!', 'Profile edits applied', 'success');
-    setTimeout((router: Router) => {
-      this.router.navigate(['/home/profile', this.user.userId]);
-  }, 2000);
+    // const save = ((document.getElementById('saveUser') as HTMLInputElement).value);
 
-    this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
-    this.chordApi.updateUser(this.user).subscribe(data => this.parseUser(data));
+    /* setTimeout((router: Router) => {
+       this.router.navigate(['/home/profile', this.user.userId]);
+   }, 2000); */
+    if (this.user.genreOne) {
+      this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
+      this.chordApi.updateUser(this.user).subscribe(data => this.parseUser(data));
+    } else {
+      swal('Error!', 'Specify Genre One Pls', 'warning');
+    }
   }
 
   parseUser(userJSON) {
     console.log(userJSON);
 
-    this.user = {
-      userId: userJSON.userId, firstname: userJSON.firstname, lastname: userJSON.lastname,
-      email: userJSON.email, dob: userJSON.dob, password: userJSON.password, genreOne: userJSON.genreOne,
-      genreTwo: userJSON.genreTwo, genreThree: userJSON.genreThree, picture: userJSON.picture,
-      bio: userJSON.bio
-    };
+    this.user = userJSON;
+
 
     sessionStorage.setItem('user', JSON.stringify(this.user));
-    this.user = JSON.parse(sessionStorage.getItem('user'));
-    console.log(sessionStorage.getItem('user'));
-    this.router.navigate(['home/profile', this.user.userId]);
+    // this.user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(this.user);
+    swal('Success!', 'Profile edits applied', 'success');
+    this.router.navigate(['/home/profile', this.user.userId]);
   }
+
   ngOnInit() {
     this.user = JSON.parse(sessionStorage.getItem('user'));
   }
@@ -78,12 +79,15 @@ export class UpdateProfileComponent implements OnInit {
 
   savePassword() {
     if (this.password !== this.passwordConfirm) {
-      alert('passwords must match');
+      swal('Error!', 'Passwords must match!', 'warning');
     } else {
-    this.user.password = this.password;
-    this.chordApi.updatePassword(this.user).subscribe(data => this.parseUser(data));
-    document.getElementById('changePasswordThing').style.display = 'none';
-    alert('success');
+      this.chordApi.updatePassword(this.user.userId, this.password).subscribe(data => this.handlePassword(data));
+      document.getElementById('changePasswordThing').style.display = 'none';
+      swal('Success', 'Picture uploaded!', 'success');
     }
+  }
+
+  handlePassword(data) {
+    console.log(data);
   }
 }
