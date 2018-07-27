@@ -82,14 +82,15 @@ border: 8px none #000000;
     top: 70px;
 }
 img{
-    border-radius: 15px 15px 15px 15px;
-    -moz-border-radius: 15px 15px 15px 15px;
-    -webkit-border-radius: 15px 15px 15px 15px;
     position: absolute;
-    left: 100px;
+    left: 0px;
     z-index: 1;
 }
 
+#image{
+    position: absolute;
+    left: 0px;
+}
 .rightstuff{
     position: relative;
     top: 169px;
@@ -112,7 +113,11 @@ button{
     background-color: #1FD860;
     color: black;
     top: 10px;
-    right: 35px;
+    right: 0px;
+}
+
+#saveUser{
+    left: -30px;
 }
 .profileIcon{
     background-color: white;
@@ -147,11 +152,10 @@ border: 8px none #000000;
 } 
 #image {
     position: relative;
-    left: 17px;
+    left: 5px;
     top: 15px;
     width: 90px;
     height:90px;
-    
 }
 p {
     font-size: 14px;
