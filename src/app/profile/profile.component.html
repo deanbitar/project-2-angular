@@ -18,10 +18,10 @@
       <div class="genre">
         <h3>Favorite Genres:</h3>
         <h6> {{ user.genreOne }}</h6>
-        <div *ngIf="user.genreTwo">
+        <div *ngIf="user.genreTwo !== 'null'">
           <h6> {{ user.genreTwo }}</h6>
         </div>
-        <div *ngIf="user.genreThree">
+        <div *ngIf="user.genreThree !== 'null'">
           <h6> {{ user.genreThree }}</h6>
         </div>
       </div>
@@ -43,7 +43,7 @@
           <br/>
           <div class="image">
               <span *ngIf="post.picture !== 'undefined'">
-                  <img [src]="post.picture" />
+                  <img [src]="post.picture" class="img"/>
               </span>
           </div>
           <h5 class="date">{{getDate(post.submitTime)}}</h5>

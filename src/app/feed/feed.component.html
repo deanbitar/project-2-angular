@@ -30,14 +30,14 @@
                                 <a [routerLink]="['/home/profile', post.author.userId]">{{post.author.firstname}} {{post.author.lastname}}</a>
                             </span>
                         </div>
-                        <p class="description">{{post.description}}</p>
+                        <p class="description" style="font-size:13px">{{post.description}}</p>
                         <div class="image">
                             <span *ngIf="post.picture !== 'undefined'">
-                                <img [src]="post.picture" />
+                                <img [src]="post.picture" class="img" />
                             </span>
                         </div>
-                        <h6>{{post.likedUsers.length}} Likes</h6>
-                        <h6 class="date">{{getDate(post.submitTime)}}</h6>
+                        <h6 style="font-size:13px">{{post.likedUsers.length}} Likes</h6>
+                        <h6 class="date" style="font-size:13px">{{getDate(post.submitTime)}}</h6>
                         <button *ngIf='!postLikedByUser(post)' (click)="likePost(post.postId)" class="like">
                             <img src="https://preview.ibb.co/mhGY18/facebook_like_thumb_green.png" width="20px" height="20px">
                         </button>
