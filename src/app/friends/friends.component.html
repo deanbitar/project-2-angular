@@ -21,7 +21,7 @@
     <ul class="users">
       <li *ngFor="let user of users">
         <p>
-          <img [src]="user.picture" style="width: 75px; height: 75px" />
+          <img [src]="user.picture" style="width: 90px; height: 90px" />
           <a [routerLink]="['/home/profile', user.userId]" style="font-size: 20px;font-weight: bold;">{{user.firstname}} {{user.lastname}}</a>
         </p>
       </li>
