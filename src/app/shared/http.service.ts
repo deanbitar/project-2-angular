@@ -85,10 +85,10 @@ export class HttpService {
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
   }
 
-  public updatePassword(user): Observable<string> {
+  public updatePassword(userId, password): Observable<string> {
     const path = this.url.concat('changePassword.chord');
     const params = {
-      userId: user.userId, newPassword: user.password
+      userId: userId, newPassword: password
     };
     return this.http.get(path, { params: params }).pipe(map(resp => resp as string));
   }
