@@ -9,7 +9,7 @@ import { SpotifyServiceService } from '../shared/spotify-service.service';
 })
 export class SpotifyComponent implements OnInit {
 
-  constructor(private spotify: SpotifyServiceService) { }
+  constructor() { }
 
   ngOnInit() {
 
