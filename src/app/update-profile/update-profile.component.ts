@@ -78,13 +78,13 @@ export class UpdateProfileComponent implements OnInit {
 
   savePassword() {
     if (this.password !== this.passwordConfirm) {
-      alert('passwords must match');
+      swal('Warning', 'Passwords must match', 'warning');
     } else {
     this.user.password = this.password;
     this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
     this.chordApi.updatePassword(this.user).subscribe(data => this.parseUser(data));
     document.getElementById('changePasswordThing').style.display = 'none';
-    alert('success');
+    swal('Success', 'Password has been changed', 'success');
     }
   }
 }
