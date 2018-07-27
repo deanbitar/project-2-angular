@@ -48,15 +48,9 @@
           <p class="description">{{post.description}}</p>
           <br/>
           <div class="image">
-<<<<<<< HEAD
-            <span *ngIf="post.picture !== 'undefined'">
-              <img [src]="post.picture" />
-            </span>
-=======
               <span *ngIf="post.picture !== 'undefined'">
                   <img [src]="post.picture" class="img"/>
               </span>
->>>>>>> 62473b710ae669d2e927d7805c87b0e20770693f
           </div>
           <h5 class="date">{{getDate(post.submitTime)}}</h5>
           <br/>
