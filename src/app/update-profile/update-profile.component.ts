@@ -81,7 +81,6 @@ export class UpdateProfileComponent implements OnInit {
       alert('passwords must match');
     } else {
     this.user.password = this.password;
-    this.user.picture = JSON.parse(sessionStorage.getItem('user')).picture;
     this.chordApi.updatePassword(this.user).subscribe(data => this.parseUser(data));
     document.getElementById('changePasswordThing').style.display = 'none';
     alert('success');
