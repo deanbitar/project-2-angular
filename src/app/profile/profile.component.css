@@ -19,13 +19,7 @@
     text-align: center;
 }
 
-.userbio{
-    position: absolute;
-    text-align:left;
-    font-size: 14px;
-    top: 372px;
-    left: 70px;
-}
+
 
 .embed-container{
     position: relative;
@@ -37,7 +31,7 @@
 #posts{
     position:relative;
     text-align: left;
-    top: 300px;
+    top: 280px;
     font-size: 18px;
     color: black;
     left: 55px;
@@ -52,20 +46,20 @@
 }
 h1{
     position: relative;
-    left: 164%;
+    left: 159%;
     top: 5px;
 }
+h3{
+    font-weight: bold;
+}
+.info{
+    text-align: left;
+    font-size: 18px;
+    position: relative;
+    left: 18%;
+    top: 10%;
+}
 
-#useremail{
-    position: relative;
-    left: 40px;
-    top: 0px;
-}
-#userdob{
-    position: relative;
-    left: 42px;
-    top: 10px;
-}
 hr {
     display: block;
     height: 1px;
@@ -79,9 +73,8 @@ hr {
 
 .genre{
     position: relative;
-    top: 300px;
-    right:-610px;
-    font-size: 16px;
+    top: 80%;
+    left: 340px;
     color:black;
 }
 
@@ -98,7 +91,7 @@ h6{
     background-color: #1FD860;
     position: relative;
     top: 5px;
-    right:-592px;
+    right: -150px;
     z-index:1;
 
 }
